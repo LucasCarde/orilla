@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orilla — del agua a la ciudad</title>
+  <meta name="description" content="Ropa de hombre y oro para usar todos los días. Sweaters, camisas, remeras, anillos y una cadena.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%23141816' width='32' height='32'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!--
+    TEMPLATE DE MARCA
+    Nombre de trabajo: Orilla. Buscá "Orilla" y cambialo por el definitivo.
+    Textos y precios: en este archivo.
+    Para sumar una prenda: copiá un <article class="pcard"> y poné la foto en assets/.
+    La bolsa se guarda en el navegador. Todavía no cobra.
+  -->
+</head>
+<body>
+  <a class="skip" href="#ropa">Ir a la ropa</a>
+  <div class="cursor" aria-hidden="true">
+    <img src="assets/cursor-fish.png" alt="">
+  </div>
+
+  <header class="top" id="top">
+    <div class="nav">
+      <a class="logo" href="#inicio">Orilla</a>
+      <nav class="links" id="links">
+        <a href="#ropa">Tienda</a>
+        <a href="#historias">Historias</a>
+        <a href="#marca">La marca</a>
+        <button type="button" class="only-mobile" data-action="guide">Talles</button>
+      </nav>
+      <div class="nav__end">
+        <button class="textbtn" type="button" data-action="guide">Talles</button>
+        <button class="bag" type="button" data-action="open-cart">
+          Bolsa
+          <span data-cart-count>0</span>
+        </button>
+        <button class="burger" type="button" data-action="menu" aria-expanded="false" aria-controls="links">
+          <span></span><span></span>
+          <span class="vh">Menú</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="hero__copy">
+      <p class="eyebrow">Temporada 01</p>
+      <h1>Del agua<br>a la ciudad.</h1>
+      <p class="hero__lead">Ropa cómoda y canchera, y oro para usarla encima. La que va al agua y también a una mesa, sin cambiarse entero.</p>
+      <a class="link" href="#ropa">Ver la tienda</a>
+    </div>
+    <figure class="hero__media">
+      <img src="assets/sea-tropic.jpg" alt="La costa, desde arriba" style="object-position:center">
+    </figure>
+  </section>
+
+  <section class="looks" aria-label="Looks">
+    <figure>
+      <div class="looks__frame">
+        <img src="assets/shirt.jpg" alt="Sobrecamisa de jean en la costa">
+      </div>
+      <figcaption>La costa</figcaption>
+    </figure>
+    <figure>
+      <div class="looks__frame">
+        <img src="assets/board.jpg" alt="En la tabla, en el agua">
+      </div>
+      <figcaption>El agua</figcaption>
+    </figure>
+  </section>
+
+  <section class="manifesto" id="marca">
+    <div class="manifesto__copy">
+      <p class="eyebrow">Dos amigos</p>
+      <h2>Canchera para la playa. Tranquila para quedarse.</h2>
+      <p>Ropa cómoda y con onda, y oro para usarla encima. La que te llevás al agua y también a un lugar un poco más formal, sin tener que cambiarte entero.</p>
+      <p>Sweaters, camisas, remeras, anillos y una cadena. Pocas cosas, bien hechas. El nombre y el logo todavía están en veremos.</p>
+      <ul class="facts">
+        <li>Lana, jean, frisa y algodón pesado</li>
+        <li>Oro grueso, para todos los días</li>
+        <li>Del agua a una mesa</li>
+      </ul>
+    </div>
+    <figure class="manifesto__photo">
+      <img src="assets/surf.jpg" alt="Surfista en el tubo">
+      <figcaption>En el agua.</figcaption>
+    </figure>
+  </section>
+
+  <section class="shop" id="ropa">
+    <div class="shop__head">
+      <div>
+        <p class="eyebrow">La tienda</p>
+        <h2>Ropa de hombre, y lo que va encima.</h2>
+      </div>
+      <p class="lede">Por ahora es solo de hombre. Precios de muestra, en pesos. Las fotos de los accesorios son para ver el estilo: oro usado, no de vidriera.</p>
+    </div>
+
+    <div class="filters" role="toolbar" aria-label="Filtrar por tipo">
+      <button type="button" class="chip is-on" data-action="filter" data-cat="todo" aria-pressed="true">Todo</button>
+      <button type="button" class="chip" data-action="filter" data-cat="sweaters" aria-pressed="false">Sweaters</button>
+      <button type="button" class="chip" data-action="filter" data-cat="camisas" aria-pressed="false">Camisas</button>
+      <button type="button" class="chip" data-action="filter" data-cat="remeras" aria-pressed="false">Remeras</button>
+      <button type="button" class="chip" data-action="filter" data-cat="abrigos" aria-pressed="false">Abrigos</button>
+      <button type="button" class="chip" data-action="filter" data-cat="accesorios" aria-pressed="false">Accesorios</button>
+    </div>
+
+    <div class="grid" id="grid">
+      <article class="pcard" data-cat="accesorios" data-id="anillo-sello" data-name="Anillo sello" data-price="46000" data-fixed-size="Único" data-meta="Oro · sello" data-blurb="Un sello de oro, para usarlo todos los días. La cara grabada es la pieza, no un adorno.">
+        <button class="ph" type="button" data-action="open-product">
+          <img src="assets/gold-ring.jpg" alt="Anillo sello de oro, de cerca">
+          <span class="badge">Oro</span>
+        </button>
+        <div class="pinfo">
+          <h3><button type="button" data-action="open-product">Anillo sello</button></h3>
+          <p class="meta">Oro · sello</p>
+          <p class="price">$46.000</p>
+          <button class="add" type="button" data-action="add">Agregar</button>
+        </div>
+      </article>
+
+      <article class="pcard" data-cat="accesorios" data-id="anillos" data-name="Anillos" data-price="68000" data-fixed-size="Único" data-meta="Oro · tres" data-blurb="Tres anillos para usar juntos. Sellos chicos, de oro, para la mano y no para guardarlos.">
+        <button class="ph" type="button" data-action="open-product">
+          <img src="assets/gold-finger.jpg" alt="Tres anillos sello de oro en la mano">
+        </button>
+        <div class="pinfo">
+          <h3><button type="button" data-action="open-product">Anillos</button></h3>
+          <p class="meta">Oro · tres</p>
+          <p class="price">$68.000</p>
+          <button class="add" type="button" data-action="add">Agregar</button>
+        </div>
+      </article>
+
+      <article class="pcard" data-cat="accesorios" data-id="cadena" data-name="Cadena" data-price="54000" data-fixed-size="Único" data-meta="Oro · gruesa" data-blurb="Una cadena gruesa, arriba de la remera. Sin dije. El oro se usa, no se guarda.">
+        <button class="ph" type="button" data-action="open-product">
+          <img src="assets/gold-man.jpg" alt="Cadena de oro gruesa sobre una remera">
+        </button>
+        <div class="pinfo">
+          <h3><button type="button" data-action="open-product">Cadena</button></h3>
+          <p class="meta">Oro · gruesa</p>
+          <p class="price">$54.000</p>
+          <button class="add" type="button" data-action="add">Agregar</button>
+        </div>
+      </article>
+
+      <article class="pcard" data-cat="abrigos" data-id="saco-arena" data-name="Saco arena" data-price="138000" data-meta="Lana · arena" data-blurb="Corte recto, sin hombreras duras. Va con una remera blanca a la mañana y también cuando el plan se pone más serio.">
+        <button class="ph" type="button" data-action="open-product">
+          <img src="assets/denim.jpg" alt="Saco arena abierto sobre una remera blanca" style="object-position:center 18%">
+          <span class="badge">El puente</span>
+        </button>
+        <div class="pinfo">
+          <h3><button type="button" data-action="open-product">Saco arena</button></h3>
+          <p class="meta">Lana · arena</p>
+          <p class="price">$138.000</p>
+          <div class="sizes" role="group" aria-label="Talle de Saco arena">
+            <button type="button" data-action="size" data-size="S">S</button>
+            <button type="button" data-action="size" data-size="M">M</button>
+            <button type="button" data-action="size" data-size="L">L</button>
+            <button type="button" data-action="size" data-size="XL">XL</button>
+          </div>
+          <p class="size-hint" hidden>Elegí un talle.</p>
+          <button class="add" type="button" data-action="add">Agregar</button>
+        </div>
+      </article>
+
+      <article class="pcard" data-cat="camisas" data-id="camisa-ladrillo" data-name="Camisa ladrillo" data-price="78000" data-meta="Algodón · ladrillo" data-blurb="Abierta arriba de una remera, o cerrada. El punto medio entre la playa y una mesa.">
+        <button class="ph" type="button" data-action="open-product">
+          <img src="assets/street.jpg" alt="Camisa ladrillo abierta sobre remera blanca" style="object-position:center 22%">
+        </button>
+        <div class="pinfo">
+          <h3><button type="button" data-action="open-product">Camisa ladrillo</button></h3>
+          <p class="meta">Algodón · ladrillo</p>
+          <p class="price">$78.000</p>
+          <div class="sizes" role="group" aria-label="Talle de Camisa ladrillo">
+            <button type="button" data-action="size" data-size="S">S</button>
+            <button type="button" data-action="size" data-size="M">M</button>
+            <button type="button" data-action="size" data-size="L">L</button>
+            <button type="button" data-action="size" data-size="XL">XL</button>
+          </div>
+          <p class="size-hint" hidden>Elegí un talle.</p>
+          <button class="add" type="button" data-action="add">Agregar</button>
+        </div>
+      </article>
+
+      <article class="pcard" data-cat="remeras" data-id="remera-base" data-name="Remera base" data-price="48000" data-meta="Algodón pesado · blanca" data-blurb="Cuello que no se deforma y tela que se siente. La prenda que más se va a usar, sola o abajo de todo lo demás.">
+        <button class="ph" type="button" data-action="open-product">
+          <img src="assets/p-shirts.jpg" alt="Remera blanca en una percha">
+        </button>
+        <div class="pinfo">
+          <h3><button type="button" data-action="open-product">Remera base</button></h3>
+          <p class="meta">Algodón pesado · blanca</p>
+          <p class="price">$48.000</p>
+          <div class="sizes" role="group" aria-label="Talle de Remera base">
+            <button type="button" data-action="size" data-size="S">S</button>
+            <button type="button" data-action="size" data-size="M">M</button>
+            <button type="button" data-action="size" data-size="L">L</button>
+            <button type="button" data-action="size" data-size="XL">XL</button>
+          </div>
+          <p class="size-hint" hidden>Elegí un talle.</p>
+          <button class="add" type="button" data-action="add">Agregar</button>
+        </div>
+      </article>
+
+      <article class="pcard" data-cat="sweaters" data-id="sweater-gris" data-name="Sweater gris" data-price="96000" data-meta="Punto · gris" data-blurb="Cuello alto, punto elastizado. Solo, o debajo del saco cuando refresca en la ciudad.">
+        <button class="ph" type="button" data-action="open-product">
+          <img src="assets/folded.jpg" alt="Sweater de punto gris, doblado" style="object-position:center 55%">
+        </button>
+        <div class="pinfo">
+          <h3><button type="button" data-action="open-product">Sweater gris</button></h3>
+          <p class="meta">Punto · gris</p>
+          <p class="price">$96.000</p>
+          <div class="sizes" role="group" aria-label="Talle de Sweater gris">
+            <button type="button" data-action="size" data-size="S">S</button>
+            <button type="button" data-action="size" data-size="M">M</button>
+            <button type="button" data-action="size" data-size="L">L</button>
+            <button type="button" data-action="size" data-size="XL">XL</button>
+          </div>
+          <p class="size-hint" hidden>Elegí un talle.</p>
+          <button class="add" type="button" data-action="add">Agregar</button>
+        </div>
+      </article>
+
+      <article class="pcard" data-cat="camisas" data-id="sobrecamisa-jean" data-name="Sobrecamisa jean" data-price="84000" data-meta="Jean · azul lavado" data-blurb="La de la costa. Arremangada, encima de una remera, y se queda puesta todo el día.">
+        <button class="ph" type="button" data-action="open-product">
+          <img src="assets/shirt.jpg" alt="Sobrecamisa de jean en la playa" style="object-position:center 30%">
+        </button>
+        <div class="pinfo">
+          <h3><button type="button" data-action="open-product">Sobrecamisa jean</button></h3>
+          <p class="meta">Jean · azul lavado</p>
+          <p class="price">$84.000</p>
+          <div class="sizes" role="group" aria-label="Talle de Sobrecamisa jean">
+            <button type="button" data-action="size" data-size="S">S</button>
+            <button type="button" data-action="size" data-size="M">M</button>
+            <button type="button" data-action="size" data-size="L">L</button>
+            <button type="button" data-action="size" data-size="XL">XL</button>
+          </div>
+          <p class="size-hint" hidden>Elegí un talle.</p>
+          <button class="add" type="button" data-action="add">Agregar</button>
+        </div>
+      </article>
+
+      <article class="pcard" data-cat="sweaters" data-id="buzo-crudo" data-name="Buzo crudo" data-price="98000" data-meta="Frisa · crudo" data-blurb="Sin estampa y sin capucha ruidosa. Cómodo, y bastante limpio como para salir así nomás.">
+        <button class="ph" type="button" data-action="open-product">
+          <img src="assets/p-whites.jpg" alt="Buzo crudo en percha">
+        </button>
+        <div class="pinfo">
+          <h3><button type="button" data-action="open-product">Buzo crudo</button></h3>
+          <p class="meta">Frisa · crudo</p>
+          <p class="price">$98.000</p>
+          <div class="sizes" role="group" aria-label="Talle de Buzo crudo">
+            <button type="button" data-action="size" data-size="S">S</button>
+            <button type="button" data-action="size" data-size="M">M</button>
+            <button type="button" data-action="size" data-size="L">L</button>
+            <button type="button" data-action="size" data-size="XL">XL</button>
+          </div>
+          <p class="size-hint" hidden>Elegí un talle.</p>
+          <button class="add" type="button" data-action="add">Agregar</button>
+        </div>
+      </article>
+
+      <article class="pcard" data-cat="abrigos" data-id="campera-ladrillo" data-name="Campera ladrillo" data-price="112000" data-meta="Nylon · ladrillo" data-blurb="Liviana, para el entretiempo. Cierra el look cuando la remera sola se queda corta, sin disfrazarlo.">
+        <button class="ph" type="button" data-action="open-product">
+          <img src="assets/jacket.jpg" alt="Campera ladrillo en una percha">
+        </button>
+        <div class="pinfo">
+          <h3><button type="button" data-action="open-product">Campera ladrillo</button></h3>
+          <p class="meta">Nylon · ladrillo</p>
+          <p class="price">$112.000</p>
+          <div class="sizes" role="group" aria-label="Talle de Campera ladrillo">
+            <button type="button" data-action="size" data-size="S">S</button>
+            <button type="button" data-action="size" data-size="M">M</button>
+            <button type="button" data-action="size" data-size="L">L</button>
+            <button type="button" data-action="size" data-size="XL">XL</button>
+          </div>
+          <p class="size-hint" hidden>Elegí un talle.</p>
+          <button class="add" type="button" data-action="add">Agregar</button>
+        </div>
+      </article>
+
+      <article class="pcard" data-cat="sweaters" data-id="buzo-gris" data-name="Buzo gris" data-price="94000" data-meta="Frisa · gris" data-blurb="El de todos los días. Capucha, bolsillo, y una tela que no se ve fina de más.">
+        <button class="ph" type="button" data-action="open-product">
+          <img src="assets/p-hoodie.jpg" alt="Buzo gris, de espaldas" style="object-position:center 40%">
+        </button>
+        <div class="pinfo">
+          <h3><button type="button" data-action="open-product">Buzo gris</button></h3>
+          <p class="meta">Frisa · gris</p>
+          <p class="price">$94.000</p>
+          <div class="sizes" role="group" aria-label="Talle de Buzo gris">
+            <button type="button" data-action="size" data-size="S">S</button>
+            <button type="button" data-action="size" data-size="M">M</button>
+            <button type="button" data-action="size" data-size="L">L</button>
+            <button type="button" data-action="size" data-size="XL">XL</button>
+          </div>
+          <p class="size-hint" hidden>Elegí un talle.</p>
+          <button class="add" type="button" data-action="add">Agregar</button>
+        </div>
+      </article>
+    </div>
+    <p class="empty" id="empty" hidden>En esta categoría todavía no hay nada.</p>
+  </section>
+
+  <section class="band">
+    <figure class="band__media">
+      <img src="assets/sea-cliff.jpg" alt="Surf al atardecer">
+    </figure>
+    <div class="band__copy">
+      <p class="eyebrow">Oro</p>
+      <h2>La misma ropa.<br>Otro oro.</h2>
+      <a class="link" href="#historias">Leer historias</a>
+    </div>
+  </section>
+
+  <section class="stories" id="historias">
+    <div class="shop__head">
+      <div>
+        <p class="eyebrow">Notas</p>
+        <h2>Más historias, cuando haya.</h2>
+      </div>
+      <p class="lede">Un lugar para looks, pruebas de tela y lo que vayan haciendo. Hoy hay tres notas de arranque, para que la sección ya exista.</p>
+    </div>
+    <div class="story-grid">
+      <article class="story">
+        <img src="assets/sea-ride.jpg" alt="En una ola">
+        <p class="eyebrow">01</p>
+        <h3>Todavía sin nombre</h3>
+        <p>No hay logo. Hay una forma de vestirse: cómoda, canchera, y que no desentona cuando el día cambia de plan.</p>
+        <p class="more" hidden>Por ahora el sitio se llama Orilla, y es un nombre de trabajo. La ropa es lo que queremos tener claro antes que la marca. Cuando el nombre llegue, se cambia en un rato: está escrito, no está escondido en un sistema.</p>
+        <button type="button" class="textbtn" data-action="story">Leer</button>
+      </article>
+      <article class="story">
+        <img src="assets/denim.jpg" alt="" style="object-position:center 20%">
+        <p class="eyebrow">02</p>
+        <h3>La prueba del saco</h3>
+        <p>Si la prenda funciona en la costa y también en una cena, entra. Si solo funciona en una de las dos, no.</p>
+        <p class="more" hidden>El saco arena es esa prueba hecha prenda. Abierto, con remera, es de día. Cerrado, es otra cosa, sin dejar de ser la misma ropa. Esa es la vara para lo que venga: sweaters, camisas y remeras incluidos.</p>
+        <button type="button" class="textbtn" data-action="story">Leer</button>
+      </article>
+      <article class="story">
+        <img src="assets/gold-man.jpg" alt="">
+        <p class="eyebrow">03</p>
+        <h3>El oro, encima</h3>
+        <p>Una cadena cambia la remera. Un anillo sello cambia la mano. El accesorio no es un extra: es parte del look.</p>
+        <p class="more" hidden>Pocas piezas, de oro, para usarlas de verdad y no guardarlas. Van con la ropa de día y también cuando el plan se pone más serio.</p>
+        <button type="button" class="textbtn" data-action="story">Leer</button>
+      </article>
+    </div>
+  </section>
+
+  <section class="letter" id="aviso">
+    <div class="letter__box">
+      <p class="eyebrow">Aviso</p>
+      <h2>Cuando haya novedades.</h2>
+      <p>Dejá el mail. Nombre, primera tanda, o una prenda nueva: es el lugar para avisar.</p>
+      <form id="letter-form">
+        <label class="vh" for="mail">Email</label>
+        <input id="mail" name="email" type="email" required placeholder="tu@mail.com" autocomplete="email">
+        <button class="btn" type="submit">Anotarme</button>
+      </form>
+      <p class="thanks" id="thanks" hidden>Listo. Cuando esto mande mails de verdad, te llega. Por ahora queda guardado en esta página, en tu navegador.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div>
+      <p class="logo logo--foot">Orilla</p>
+      <p>Ropa para el día largo. Hecha entre dos amigos.</p>
+    </div>
+    <div>
+      <p class="footer__label">Mapa</p>
+      <a href="#ropa">Tienda</a>
+      <a href="#historias">Historias</a>
+      <a href="#marca">La marca</a>
+      <button type="button" data-action="guide">Guía de talles</button>
+    </div>
+    <div>
+      <p class="footer__label">Nota</p>
+      <p>Orilla es un nombre de trabajo. Las fotos son de muestra, para reemplazar con las de ustedes.</p>
+    </div>
+  </footer>
+
+  <aside class="cart" id="cart" aria-hidden="true">
+    <div class="cart__head">
+      <h2>Bolsa</h2>
+      <button type="button" class="textbtn" data-action="close-cart">Cerrar</button>
+    </div>
+    <div class="cart__body" data-cart-body></div>
+    <div class="cart__foot">
+      <p class="sub">Subtotal <strong data-cart-total>$0</strong></p>
+      <p class="fine">El envío y el pago se suman cuando la tienda esté conectada.</p>
+      <button class="btn btn--block" type="button" data-action="checkout">Cerrar compra</button>
+      <p class="checkout-note" data-checkout-note hidden>Esto todavía no cobra. La bolsa sirve para probar cómo se siente comprar.</p>
+    </div>
+  </aside>
+  <div class="shade" data-action="close-cart" hidden></div>
+
+  <dialog class="modal" id="product-dialog">
+    <div class="modal__product">
+      <img alt="" data-p-img>
+      <div>
+        <p class="meta" data-p-meta></p>
+        <h2 data-p-name></h2>
+        <p data-p-blurb></p>
+        <p class="price" data-p-price></p>
+        <div class="sizes" role="group" aria-label="Talle" data-p-sizes>
+          <button type="button" data-action="size" data-size="S">S</button>
+          <button type="button" data-action="size" data-size="M">M</button>
+          <button type="button" data-action="size" data-size="L">L</button>
+          <button type="button" data-action="size" data-size="XL">XL</button>
+        </div>
+        <p class="size-hint" data-p-hint hidden>Elegí un talle.</p>
+        <div class="modal__actions">
+          <button class="add" type="button" data-action="add">Agregar</button>
+          <button class="textbtn" type="button" data-action="close-dialog">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="modal" id="story-dialog">
+    <p class="eyebrow" data-s-kicker></p>
+    <h2 data-s-title></h2>
+    <p data-s-body></p>
+    <button class="textbtn" type="button" data-action="close-dialog">Cerrar</button>
+  </dialog>
+
+  <dialog class="modal" id="guide-dialog">
+    <p class="eyebrow">Guía de talles</p>
+    <h2>Medidas de muestra.</h2>
+    <p>Son un punto de partida para la ficha. Cuando tengan la prenda medida, se actualiza esta tabla.</p>
+    <table>
+      <thead>
+        <tr><th>Talle</th><th>Pecho</th><th>Largo</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>S</td><td>50 cm</td><td>68 cm</td></tr>
+        <tr><td>M</td><td>53 cm</td><td>70 cm</td></tr>
+        <tr><td>L</td><td>56 cm</td><td>72 cm</td></tr>
+        <tr><td>XL</td><td>59 cm</td><td>74 cm</td></tr>
+      </tbody>
+    </table>
+    <button class="textbtn" type="button" data-action="close-dialog">Cerrar</button>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
