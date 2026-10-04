@@ -6,8 +6,7 @@
   --surface: #2a2b28;
   --nav-bg: rgba(28, 29, 27, 0.88);
   --foam: url("assets/bg-foam.jpg");
-  --bg-foam:
-    var(--foam) center / 560px repeat fixed;
+  --foam-veil: linear-gradient(rgba(28, 29, 27, 0.55), rgba(28, 29, 27, 0.55));
   --serif: "Instrument Serif", "Iowan Old Style", Palatino, Georgia, serif;
   --sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --nav: 68px;
@@ -19,11 +18,11 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background-color: var(--paper);
-  background-image: var(--foam);
-  background-position: center;
-  background-size: 560px;
-  background-repeat: repeat;
-  background-attachment: fixed;
+  background-image: var(--foam-veil), var(--foam);
+  background-position: center, center;
+  background-size: auto, 560px;
+  background-repeat: repeat, repeat;
+  background-attachment: fixed, fixed;
   color: var(--ink);
   font-family: var(--sans);
   font-size: 15px;
@@ -50,8 +49,8 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.03e
   position: fixed; top: 12px; left: 12px;
   width: auto; height: auto; margin: 0; clip: auto;
   background-color: var(--paper);
-  background-image: var(--foam);
-  background-size: 560px;
+  background-image: var(--foam-veil), var(--foam);
+  background-size: auto, 560px;
   background-repeat: repeat;
   padding: 8px 12px; z-index: 80;
 }
@@ -109,11 +108,11 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.03e
   height: var(--nav);
   color: var(--ink);
   background-color: var(--nav-bg);
-  background-image: var(--foam);
-  background-position: center;
-  background-size: 560px;
-  background-repeat: repeat;
-  background-attachment: fixed;
+  background-image: var(--foam-veil), var(--foam);
+  background-position: center, center;
+  background-size: auto, 560px;
+  background-repeat: repeat, repeat;
+  background-attachment: fixed, fixed;
   backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--line);
 }
@@ -551,10 +550,10 @@ section[id] { scroll-margin-top: 76px; }
   z-index: 70;
   width: min(420px, 100%);
   background-color: var(--paper);
-  background-image: var(--foam);
-  background-size: 560px;
-  background-repeat: repeat;
-  background-attachment: fixed;
+  background-image: var(--foam-veil), var(--foam);
+  background-size: auto, 560px;
+  background-repeat: repeat, repeat;
+  background-attachment: fixed, fixed;
   border-left: 1px solid var(--line);
   transform: translateX(104%);
   transition: transform .45s var(--ease);
@@ -611,9 +610,9 @@ section[id] { scroll-margin-top: 76px; }
   padding: 0;
   width: min(980px, calc(100% - 32px));
   background-color: var(--paper);
-  background-image: var(--foam);
-  background-size: 560px;
-  background-repeat: repeat;
+  background-image: var(--foam-veil), var(--foam);
+  background-size: auto, 560px;
+  background-repeat: repeat, repeat;
   color: var(--ink);
 }
 .modal::backdrop { background: rgba(10, 10, 9, 0.55); }
@@ -667,8 +666,8 @@ section[id] { scroll-margin-top: 76px; }
 
 @media (max-width: 800px) {
   body, .top, .cart, .modal, .links {
-    background-attachment: scroll;
-    background-size: 420px;
+    background-attachment: scroll, scroll;
+    background-size: auto, 420px;
   }
   :root { --nav: 58px; }
   .nav {
@@ -689,9 +688,9 @@ section[id] { scroll-margin-top: 76px; }
     inset: 0;
     z-index: 35;
     background-color: var(--paper);
-    background-image: var(--foam);
-    background-size: 560px;
-    background-repeat: repeat;
+    background-image: var(--foam-veil), var(--foam);
+    background-size: auto, 560px;
+    background-repeat: repeat, repeat;
     flex-direction: column;
     justify-content: center;
     gap: 6px;
