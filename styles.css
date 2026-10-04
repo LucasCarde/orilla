@@ -182,31 +182,31 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.03e
 .burger[aria-expanded="true"] span:nth-child(2) { transform: translateY(-3.5px) rotate(-40deg); }
 
 .hero {
-  min-height: calc(100vh - var(--nav));
+  min-height: min(78vh, 760px);
   display: grid;
   grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
   background-color: transparent;
 }
 .hero__copy {
-  min-height: calc(100vh - var(--nav));
+  min-height: min(78vh, 760px);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 48px 7vw 72px;
+  padding: 40px 7vw 52px;
 }
 .hero h1 {
-  margin: 0 0 28px;
-  font-size: clamp(4.2rem, 7vw, 7.4rem);
+  margin: 0 0 22px;
+  font-size: clamp(3.6rem, 6.2vw, 6.4rem);
   max-width: 8ch;
 }
 .hero__lead {
-  margin: 0 0 32px;
+  margin: 0 0 26px;
   max-width: 32ch;
   font-size: 15px;
   line-height: 1.55;
   color: var(--muted);
 }
-.hero__media { position: relative; min-height: calc(100vh - var(--nav)); overflow: hidden; }
+.hero__media { position: relative; min-height: min(78vh, 760px); overflow: hidden; }
 .hero__media img {
   position: absolute;
   inset: 0;
@@ -221,15 +221,15 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.03e
 .looks {
   display: grid;
   grid-template-columns: 1.35fr 0.85fr;
-  gap: 12px;
-  padding: 12px;
+  gap: 10px;
+  padding: 10px;
   background-color: transparent;
 }
 .looks figure { margin: 0; }
 .looks__frame { overflow: hidden; }
 .looks img {
   width: 100%;
-  height: 86vh;
+  height: min(52vh, 480px);
   object-fit: cover;
   transition: transform 1.2s var(--ease);
 }
@@ -247,23 +247,23 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.03e
 .manifesto {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-  gap: 80px;
+  gap: 56px;
   align-items: end;
-  padding: 120px 7vw 100px;
+  padding: 64px 7vw 56px;
 }
 .manifesto h2 {
-  margin: 0 0 22px;
-  font-size: clamp(2.6rem, 4vw, 4.2rem);
+  margin: 0 0 16px;
+  font-size: clamp(2.2rem, 3.4vw, 3.4rem);
   max-width: 12ch;
 }
-.manifesto p { margin: 0 0 14px; max-width: 38ch; color: var(--ink); }
+.manifesto p { margin: 0 0 12px; max-width: 38ch; color: var(--ink); }
 .facts {
-  margin: 28px 0 0;
+  margin: 18px 0 0;
   padding: 0;
   list-style: none;
 }
 .facts li {
-  padding: 12px 0;
+  padding: 10px 0;
   border-top: 1px solid var(--line);
   font-size: 13px;
   letter-spacing: 0.04em;
@@ -272,6 +272,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.03e
 .manifesto__photo img {
   width: 100%;
   aspect-ratio: 4/5;
+  max-height: min(62vh, 560px);
   object-fit: cover;
   object-position: center 28%;
 }
@@ -283,14 +284,14 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.03e
   color: var(--muted);
 }
 
-.shop { padding: 28px 7vw 120px; }
+.shop { padding: 12px 7vw 100px; }
 .shop__head, .stories .shop__head {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 40px;
   align-items: end;
-  margin-bottom: 36px;
-  padding-top: 72px;
+  margin-bottom: 28px;
+  padding-top: 36px;
 }
 .shop h2, .stories h2, .letter h2 {
   margin: 0;
@@ -649,16 +650,17 @@ section[id] { scroll-margin-top: 76px; }
   }
   .grid { grid-template-columns: 1fr 1fr; gap: 36px 14px; }
   .looks { grid-template-columns: 1fr; padding: 0; gap: 0; }
-  .looks img { height: min(68vh, 560px); width: 100%; }
-  .hero__media, .band__media { min-height: min(62vh, 520px); }
+  .looks img { height: min(42vh, 360px); width: 100%; }
+  .hero__media, .band__media { min-height: min(48vh, 420px); }
   .band { min-height: 0; }
   .band__copy { min-height: auto; padding: 56px 28px; }
-  .manifesto { gap: 28px; padding: 64px 0 72px; }
+  .manifesto { gap: 22px; padding: 40px 0 44px; }
   .manifesto__copy { padding: 0 28px; }
-  .manifesto h2 { max-width: 14ch; font-size: clamp(2.2rem, 6vw, 3.2rem); }
+  .manifesto h2 { max-width: 14ch; font-size: clamp(2rem, 5.5vw, 2.8rem); }
   .manifesto__photo { order: -1; }
   .manifesto__photo figcaption { padding: 12px 28px 0; }
-  .shop__head, .stories .shop__head { gap: 18px; padding-top: 48px; margin-bottom: 28px; }
+  .manifesto__photo img { max-height: min(48vh, 420px); }
+  .shop__head, .stories .shop__head { gap: 18px; padding-top: 28px; margin-bottom: 22px; }
   .shop, .stories { padding-left: 28px; padding-right: 28px; }
   .letter, .footer { padding-left: 28px; padding-right: 28px; }
   .footer { gap: 28px; padding-top: 40px; padding-bottom: 48px; }
@@ -714,24 +716,25 @@ section[id] { scroll-margin-top: 76px; }
   .hero__copy {
     min-height: 0;
     justify-content: flex-start;
-    padding: 28px 20px 36px;
+    padding: 24px 20px 28px;
   }
   .hero h1 {
-    font-size: clamp(2.5rem, 11vw, 3.4rem);
+    font-size: clamp(2.4rem, 10vw, 3.2rem);
     max-width: 100%;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
   }
-  .hero__lead { margin-bottom: 22px; max-width: 36ch; }
-  .hero__media { min-height: min(58vh, 420px); }
-  .looks img { height: min(58vh, 440px); }
-  .looks figcaption { padding: 12px 20px 20px; }
-  .manifesto { padding: 40px 0 52px; gap: 22px; }
+  .hero__lead { margin-bottom: 18px; max-width: 36ch; }
+  .hero__media { min-height: min(46vh, 340px); }
+  .looks img { height: min(40vh, 320px); }
+  .looks figcaption { padding: 10px 20px 16px; }
+  .manifesto { padding: 28px 0 36px; gap: 18px; }
   .manifesto__copy { padding: 0 20px; }
-  .manifesto h2 { font-size: clamp(2rem, 8.5vw, 2.7rem); margin-bottom: 16px; }
-  .manifesto__photo figcaption { padding: 12px 20px 0; }
+  .manifesto h2 { font-size: clamp(1.85rem, 7.5vw, 2.4rem); margin-bottom: 12px; }
+  .manifesto__photo figcaption { padding: 10px 20px 0; }
+  .manifesto__photo img { max-height: min(42vh, 360px); }
   .shop, .stories { padding-left: 20px; padding-right: 20px; }
-  .shop { padding-bottom: 64px; padding-top: 8px; }
-  .shop__head, .stories .shop__head { padding-top: 36px; margin-bottom: 22px; }
+  .shop { padding-bottom: 64px; padding-top: 4px; }
+  .shop__head, .stories .shop__head { padding-top: 24px; margin-bottom: 18px; }
   .shop h2, .stories h2, .letter h2 {
     font-size: clamp(2rem, 8vw, 2.8rem);
   }
@@ -784,8 +787,8 @@ section[id] { scroll-margin-top: 76px; }
 
 @media (max-width: 560px) {
   .grid { gap: 20px 8px; }
-  .hero__media { min-height: min(52vh, 360px); }
-  .looks img { height: min(52vh, 380px); }
+  .hero__media { min-height: min(42vh, 300px); }
+  .looks img { height: min(36vh, 280px); }
   .pinfo h3 { font-size: 0.98rem; }
   .ph { aspect-ratio: 3 / 4; }
 }
