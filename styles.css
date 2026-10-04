@@ -6,7 +6,7 @@
   --surface: #2a2b28;
   --nav-bg: rgba(28, 29, 27, 0.88);
   --foam: url("assets/bg-foam.jpg");
-  --foam-veil: linear-gradient(rgba(28, 29, 27, 0.55), rgba(28, 29, 27, 0.55));
+  --foam-veil: linear-gradient(rgba(28, 29, 27, 0.32), rgba(28, 29, 27, 0.32));
   --serif: "Instrument Serif", "Iowan Old Style", Palatino, Georgia, serif;
   --sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --nav: 68px;
