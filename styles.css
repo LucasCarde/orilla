@@ -170,10 +170,22 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.03e
   justify-content: flex-end;
   padding: 48px 7vw 72px;
 }
+.hero__brand {
+  margin: 0 0 18px;
+  font-family: var(--brand);
+  font-size: clamp(3.4rem, 8vw, 6.8rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 0.95;
+  text-transform: uppercase;
+  animation: brand-in 1s var(--ease) both;
+}
 .hero h1 {
   margin: 0 0 28px;
-  font-size: clamp(4.2rem, 7vw, 7.4rem);
-  max-width: 8ch;
+  font-size: clamp(2.6rem, 4.6vw, 4.4rem);
+  max-width: 11ch;
+  letter-spacing: -0.03em;
+  animation: brand-in 1s var(--ease) 0.12s both;
 }
 .hero__lead {
   margin: 0 0 32px;
@@ -181,6 +193,14 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.03e
   font-size: 15px;
   line-height: 1.55;
   color: var(--muted);
+  animation: brand-in 1s var(--ease) 0.22s both;
+}
+.hero .link {
+  animation: brand-in 1s var(--ease) 0.32s both;
+}
+@keyframes brand-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 .hero__media { position: relative; min-height: calc(100vh - var(--nav)); overflow: hidden; }
 .hero__media img {
@@ -643,7 +663,8 @@ section[id] { scroll-margin-top: 76px; }
   .burger { display: block; }
   .hero { grid-template-columns: 1fr; }
   .hero__copy { min-height: calc(100svh - var(--nav)); padding: 36px 22px 48px; }
-  .hero h1 { font-size: clamp(2.9rem, 12.5vw, 4.2rem); max-width: 100%; }
+  .hero__brand { font-size: clamp(3.2rem, 16vw, 4.8rem); margin-bottom: 14px; }
+  .hero h1 { font-size: clamp(2.2rem, 9vw, 3.2rem); max-width: 100%; }
   .hero__media { min-height: 88vh; }
   .looks { grid-template-columns: 1fr; padding: 0; gap: 0; }
   .looks img { height: 78vh; }
