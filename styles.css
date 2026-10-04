@@ -5,6 +5,7 @@
   --line: rgba(20, 24, 22, 0.14);
   --serif: "Instrument Serif", "Iowan Old Style", Palatino, Georgia, serif;
   --sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --brand: "Rock Salt", "Segoe Print", "Comic Sans MS", cursive;
   --nav: 68px;
   --ease: cubic-bezier(.22, 1, .36, 1);
 }
@@ -105,12 +106,14 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.03e
   padding: 0 28px;
 }
 .logo {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 1.7rem;
-  letter-spacing: -0.03em;
+  font-family: var(--brand);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.55rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   text-decoration: none;
-  line-height: 1;
+  line-height: 1.15;
 }
 .links { display: flex; gap: 28px; }
 .links a, .links button {
@@ -478,7 +481,7 @@ section[id] { scroll-margin-top: 76px; }
   background: var(--paper);
   color: var(--ink);
 }
-.logo--foot { font-size: 2rem; margin: 0 0 10px; }
+.logo--foot { font-size: 1.85rem; margin: 0 0 10px; letter-spacing: 0.06em; }
 .footer p { margin: 0 0 8px; color: var(--muted); max-width: 32ch; }
 .footer a, .footer button {
   display: block;
