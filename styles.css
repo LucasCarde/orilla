@@ -5,7 +5,6 @@
   --line: rgba(20, 24, 22, 0.14);
   --serif: "Instrument Serif", "Iowan Old Style", Palatino, Georgia, serif;
   --sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --brand: "Permanent Marker", "Segoe Print", "Comic Sans MS", cursive;
   --nav: 68px;
   --ease: cubic-bezier(.22, 1, .36, 1);
 }
@@ -106,16 +105,12 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.03e
   padding: 0 28px;
 }
 .logo {
-  font-family: var(--brand);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.55rem;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.7rem;
+  letter-spacing: -0.03em;
   text-decoration: none;
   line-height: 1;
-  display: inline-flex;
-  align-items: center;
 }
 .links { display: flex; gap: 28px; }
 .links a, .links button {
@@ -483,7 +478,7 @@ section[id] { scroll-margin-top: 76px; }
   background: var(--paper);
   color: var(--ink);
 }
-.logo--foot { font-size: 1.85rem; margin: 0 0 10px; letter-spacing: 0.04em; }
+.logo--foot { font-size: 2rem; margin: 0 0 10px; }
 .footer p { margin: 0 0 8px; color: var(--muted); max-width: 32ch; }
 .footer a, .footer button {
   display: block;
@@ -618,7 +613,7 @@ section[id] { scroll-margin-top: 76px; }
     gap: 12px;
   }
   .nav__end { gap: 14px; flex: 0 0 auto; }
-  .logo { font-size: 1.25rem; }
+  .logo { font-size: 1.45rem; }
   .links {
     display: none;
     position: fixed;
