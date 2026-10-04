@@ -1,8 +1,10 @@
 :root {
-  --paper: #f3f1ec;
-  --ink: #141816;
-  --muted: #5e625e;
-  --line: rgba(20, 24, 22, 0.14);
+  --paper: #242522;
+  --ink: #f2f0e9;
+  --muted: #9b9c97;
+  --line: rgba(242, 240, 233, 0.14);
+  --surface: #32332f;
+  --nav-bg: rgba(36, 37, 34, 0.92);
   --serif: "Instrument Serif", "Iowan Old Style", Palatino, Georgia, serif;
   --sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --nav: 68px;
@@ -93,7 +95,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.03e
   z-index: 40;
   height: var(--nav);
   color: var(--ink);
-  background: rgba(243, 241, 236, 0.92);
+  background: var(--nav-bg);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--line);
 }
@@ -105,12 +107,22 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.03e
   padding: 0 28px;
 }
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--serif);
   font-style: italic;
-  font-size: 1.7rem;
+  font-size: 1.55rem;
   letter-spacing: -0.03em;
   text-decoration: none;
   line-height: 1;
+  color: var(--ink);
+}
+.logo img {
+  width: 28px;
+  height: auto;
+  display: block;
+  flex: 0 0 auto;
 }
 .links { display: flex; gap: 28px; }
 .links a, .links button {
@@ -227,7 +239,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.03e
   font-size: clamp(2.6rem, 4vw, 4.2rem);
   max-width: 12ch;
 }
-.manifesto p { margin: 0 0 14px; max-width: 38ch; color: #2a2e2c; }
+.manifesto p { margin: 0 0 14px; max-width: 38ch; color: var(--ink); }
 .facts {
   margin: 28px 0 0;
   padding: 0;
@@ -303,7 +315,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.03e
   width: 100%;
   padding: 0;
   border: 0;
-  background: #e7e4de;
+  background: var(--surface);
   cursor: pointer;
   overflow: hidden;
   aspect-ratio: 3/4;
@@ -320,7 +332,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.03e
   left: 14px;
   bottom: 14px;
   z-index: 1;
-  color: #f3f1ec;
+  color: var(--ink);
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.18em;
@@ -442,7 +454,7 @@ section[id] { scroll-margin-top: 76px; }
   margin-bottom: 18px;
 }
 .story h3 { margin: 0 0 10px; font-size: clamp(1.7rem, 2vw, 2.15rem); }
-.story p { margin: 0 0 16px; color: #2a2e2c; max-width: 36ch; }
+.story p { margin: 0 0 16px; color: var(--ink); max-width: 36ch; }
 .story .textbtn { border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
 
 .letter {
@@ -455,7 +467,7 @@ section[id] { scroll-margin-top: 76px; }
   background: var(--paper);
   color: var(--ink);
 }
-.letter p { margin: 14px 0 0; max-width: 36ch; color: #2a2e2c; }
+.letter p { margin: 14px 0 0; max-width: 36ch; color: var(--ink); }
 .letter form { display: flex; gap: 18px; align-items: flex-end; }
 .letter input {
   flex: 1;
@@ -478,7 +490,13 @@ section[id] { scroll-margin-top: 76px; }
   background: var(--paper);
   color: var(--ink);
 }
-.logo--foot { font-size: 2rem; margin: 0 0 10px; }
+.logo--foot {
+  font-size: 1.7rem;
+  margin: 0 0 10px;
+}
+.logo--foot img {
+  width: 34px;
+}
 .footer p { margin: 0 0 8px; color: var(--muted); max-width: 32ch; }
 .footer a, .footer button {
   display: block;
@@ -529,7 +547,7 @@ section[id] { scroll-margin-top: 76px; }
   position: fixed;
   inset: 0;
   z-index: 60;
-  background: rgba(20, 24, 22, 0.28);
+  background: rgba(10, 10, 9, 0.45);
 }
 .shade[hidden] { display: none; }
 .line {
@@ -564,7 +582,7 @@ section[id] { scroll-margin-top: 76px; }
   background: var(--paper);
   color: var(--ink);
 }
-.modal::backdrop { background: rgba(20, 24, 22, 0.4); }
+.modal::backdrop { background: rgba(10, 10, 9, 0.55); }
 .modal h2 { margin: 0 0 14px; font-size: clamp(2.2rem, 4vw, 3.2rem); }
 .modal__product {
   display: grid;
