@@ -616,7 +616,7 @@ section[id] { scroll-margin-top: 76px; }
     gap: 12px;
   }
   .nav__end { gap: 14px; flex: 0 0 auto; }
-  .logo { font-size: 1.45rem; }
+  .logo { font-size: 1.25rem; }
   .links {
     display: none;
     position: fixed;
