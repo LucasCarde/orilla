@@ -1,5 +1,28 @@
 const KEY = "benteveo-bolsa";
 const MAIL_KEY = "benteveo-mail";
+const THEME_KEY = "benteveo-theme";
+
+function currentTheme() {
+  return document.documentElement.getAttribute("data-theme") === "light"
+    ? "light"
+    : "dark";
+}
+
+function syncThemeLabel() {
+  const next = currentTheme() === "dark" ? "Claro" : "Oscuro";
+  document.querySelectorAll("[data-theme-label]").forEach((el) => {
+    el.textContent = next;
+  });
+}
+
+function setTheme(theme) {
+  const next = theme === "light" ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", next);
+  localStorage.setItem(THEME_KEY, next);
+  syncThemeLabel();
+}
+
+syncThemeLabel();
 
 const money = (n) =>
   "$" + Math.round(n).toLocaleString("es-AR");
@@ -225,6 +248,10 @@ document.addEventListener("click", (event) => {
 
   if (action === "story") openStory(target.closest(".story"));
   if (action === "guide") guideDialog.showModal();
+
+  if (action === "theme") {
+    setTheme(currentTheme() === "dark" ? "light" : "dark");
+  }
 
   if (action === "close-dialog") {
     target.closest("dialog").close();

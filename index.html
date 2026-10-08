@@ -11,6 +11,16 @@
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <script>
+    (() => {
+      const key = "benteveo-theme";
+      const saved = localStorage.getItem(key);
+      const theme = saved === "light" || saved === "dark"
+        ? saved
+        : "dark";
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
   <link rel="stylesheet" href="styles.css">
   <!--
     TEMPLATE DE MARCA
@@ -39,6 +49,9 @@
         <button type="button" class="only-mobile" data-action="guide">Talles</button>
       </nav>
       <div class="nav__end">
+        <button class="textbtn theme-toggle" type="button" data-action="theme" aria-label="Cambiar tema">
+          <span data-theme-label>Claro</span>
+        </button>
         <button class="textbtn" type="button" data-action="guide">Talles</button>
         <button class="bag" type="button" data-action="open-cart">
           Bolsa
