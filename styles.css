@@ -698,7 +698,7 @@ section[id] { scroll-margin-top: 76px; }
   }
   .links.is-open { display: flex; }
   .links a, .links button {
-    font-family: var(--serif);
+    font-family: "Instrument Serif", "Iowan Old Style", Palatino, Georgia, serif;
     font-size: clamp(2rem, 9vw, 2.5rem);
     letter-spacing: -0.03em;
     text-transform: none;
