@@ -708,6 +708,7 @@ section[id] { scroll-margin-top: 76px; }
     letter-spacing: -0.03em;
     text-transform: none;
     font-weight: 400;
+    text-align: left;
   }
   .only-mobile { display: inline; }
   .nav__end .textbtn { display: none; }
