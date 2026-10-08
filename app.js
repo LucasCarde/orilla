@@ -1,5 +1,5 @@
-const KEY = "lente-bolsa";
-const MAIL_KEY = "lente-mail";
+const KEY = "benteveo-bolsa";
+const MAIL_KEY = "benteveo-mail";
 
 const money = (n) =>
   "$" + Math.round(n).toLocaleString("es-AR");

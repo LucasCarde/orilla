@@ -136,7 +136,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.03e
   color: var(--ink);
 }
 .logo img {
-  width: 20px;
+  width: 28px;
   height: auto;
   display: block;
   flex: 0 0 auto;
@@ -524,7 +524,7 @@ section[id] { scroll-margin-top: 76px; }
   margin: 0 0 10px;
 }
 .logo--foot img {
-  width: 24px;
+  width: 32px;
 }
 .footer p { margin: 0 0 8px; color: var(--muted); max-width: 32ch; }
 .footer a, .footer button {
@@ -679,9 +679,9 @@ section[id] { scroll-margin-top: 76px; }
   }
   .nav__end { gap: 16px; flex: 0 0 auto; }
   .logo { font-size: 1.15rem; gap: 7px; }
-  .logo img { width: 17px; }
+  .logo img { width: 24px; }
   .logo--foot { font-size: 1.25rem; }
-  .logo--foot img { width: 20px; }
+  .logo--foot img { width: 28px; }
   .links {
     display: none;
     position: fixed;
