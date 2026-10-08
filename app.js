@@ -316,32 +316,8 @@ if (drift && !reduceMotion) {
 }
 
 const finePointer = window.matchMedia("(pointer: fine)").matches;
-const cursor = document.querySelector(".cursor");
 const heroMedia = document.querySelector(".hero__media");
 const heroImg = heroMedia && heroMedia.querySelector("img");
-
-if (cursor && finePointer && !reduceMotion) {
-  document.documentElement.classList.add("has-cursor");
-  let x = innerWidth / 2;
-  let y = innerHeight / 2;
-  let cx = x;
-  let cy = y;
-  window.addEventListener("pointermove", (event) => {
-    x = event.clientX;
-    y = event.clientY;
-    cursor.classList.add("is-on");
-  });
-  document.documentElement.addEventListener("pointerleave", () => {
-    cursor.classList.remove("is-on");
-  });
-  const follow = () => {
-    cx += (x - cx) * 0.2;
-    cy += (y - cy) * 0.2;
-    cursor.style.transform = `translate3d(${cx.toFixed(2)}px, ${cy.toFixed(2)}px, 0)`;
-    requestAnimationFrame(follow);
-  };
-  requestAnimationFrame(follow);
-}
 
 if (heroMedia && heroImg && finePointer && !reduceMotion) {
   heroMedia.addEventListener("pointermove", (event) => {
