@@ -7,8 +7,8 @@
   --nav-bg: rgba(28, 29, 27, 0.88);
   --foam: url("assets/bg-foam.jpg");
   --foam-veil: linear-gradient(rgba(28, 29, 27, 0.32), rgba(28, 29, 27, 0.32));
-  --serif: "Instrument Serif", "Iowan Old Style", Palatino, Georgia, serif;
-  --sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --serif: "Bodoni Moda", "Didot", "Bodoni MT", "Times New Roman", serif;
+  --sans: "Satoshi", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --nav: 68px;
   --ease: cubic-bezier(.22, 1, .36, 1);
 }
@@ -35,7 +35,13 @@ body {
 img { max-width: 100%; display: block; }
 button, input { font: inherit; color: inherit; }
 a { color: inherit; }
-h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.03em; line-height: 0.96; }
+h1, h2, h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
+  line-height: 0.98;
+}
 ::selection { background: var(--ink); color: var(--paper); }
 :focus-visible { outline: 1px solid var(--ink); outline-offset: 3px; }
 
@@ -129,8 +135,9 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.03e
   gap: 8px;
   font-family: var(--serif);
   font-style: italic;
+  font-optical-sizing: auto;
   font-size: 1.35rem;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   text-decoration: none;
   line-height: 1;
   color: var(--ink);
