@@ -15,13 +15,36 @@ function syncThemeLabel() {
   });
 }
 
+const THEME_COLORS = { dark: "#171816", light: "#f3f1ec" };
+
+function syncThemeColor(theme) {
+  const color = THEME_COLORS[theme] || THEME_COLORS.dark;
+  // Safari often ignores content updates; replace the meta so chrome follows.
+  document.querySelectorAll('meta[name="theme-color"]').forEach((el) => el.remove());
+  const meta = document.createElement("meta");
+  meta.name = "theme-color";
+  meta.id = "theme-color";
+  meta.content = color;
+  document.head.prepend(meta);
+
+  let scheme = document.querySelector('meta[name="color-scheme"]');
+  if (!scheme) {
+    scheme = document.createElement("meta");
+    scheme.name = "color-scheme";
+    document.head.prepend(scheme);
+  }
+  scheme.content = theme === "light" ? "light" : "dark";
+}
+
 function setTheme(theme) {
   const next = theme === "light" ? "light" : "dark";
   document.documentElement.setAttribute("data-theme", next);
   localStorage.setItem(THEME_KEY, next);
+  syncThemeColor(next);
   syncThemeLabel();
 }
 
+syncThemeColor(currentTheme());
 syncThemeLabel();
 
 const money = (n) =>
