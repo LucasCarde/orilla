@@ -290,7 +290,7 @@ html[data-theme="dark"] .lab-hero__band {
   width: min(100%, 420px);
   height: min(68vh, 620px);
   object-fit: cover;
-  object-position: center 18%;
+  object-position: center 28%;
   filter: grayscale(1) contrast(1.06);
 }
 .lab-hero__spine {
