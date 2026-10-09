@@ -24,7 +24,11 @@ html[data-theme="light"] {
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  /* Safari 26+ tints the status bar from html/body (theme-color is ignored). */
+  background-color: var(--paper);
+}
 body {
   margin: 0;
   background-color: var(--paper);
@@ -110,8 +114,8 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.03e
   z-index: 40;
   height: var(--nav);
   color: var(--ink);
-  background-color: var(--nav-bg);
-  backdrop-filter: blur(18px);
+  /* Solid (not rgba): Safari samples this sticky top for the status-bar tint. */
+  background-color: var(--paper);
   border-bottom: 1px solid var(--line);
 }
 .nav {
