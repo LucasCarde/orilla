@@ -41,7 +41,7 @@ body {
 img { max-width: 100%; display: block; }
 button, input { font: inherit; color: inherit; }
 a { color: inherit; }
-h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.03em; line-height: 0.96; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.03em; line-height: 0.96; }
 ::selection { background: var(--ink); color: var(--paper); }
 :focus-visible { outline: 1px solid var(--ink); outline-offset: 3px; }
 
