@@ -7,8 +7,8 @@ html[data-theme="dark"] {
   --line: rgba(242, 240, 233, 0.1);
   --surface: #242522;
   --nav-bg: rgba(23, 24, 22, 0.9);
-  --serif: "Bodoni Moda", "Didot", "Bodoni MT", "Times New Roman", serif;
-  --sans: "Satoshi", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --serif: "Times New Roman", Times, "Liberation Serif", Georgia, serif;
+  --sans: "Source Sans Pro", "Source Sans 3", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --nav: 68px;
   --ease: cubic-bezier(.22, 1, .36, 1);
 }
@@ -691,7 +691,7 @@ html[data-theme="light"] .shade { background: rgba(20, 24, 22, 0.28); }
   }
   .links.is-open { display: flex; }
   .links a, .links button {
-    font-family: "Instrument Serif", "Iowan Old Style", Palatino, Georgia, serif;
+    font-family: var(--serif);
     font-size: clamp(2rem, 9vw, 2.5rem);
     letter-spacing: -0.03em;
     text-transform: none;
