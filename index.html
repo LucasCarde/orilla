@@ -40,32 +40,84 @@
 
   <header class="top" id="top">
     <div class="nav">
+      <div class="nav__start">
+        <button class="burger" type="button" data-action="menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="burger__icon" aria-hidden="true" fill="none" width="22" height="22" viewBox="0 0 24 24">
+            <path d="M1 19h22M1 12h22M1 5h22" stroke="currentColor" stroke-width="1.3" stroke-linecap="square"/>
+          </svg>
+          <span class="vh">Menú</span>
+        </button>
+      </div>
       <a class="logo" href="#inicio">
         <img src="assets/logo-benteveo.png" alt="">
         <span>benteveo</span>
       </a>
-      <nav class="links" id="links">
+      <nav class="links" id="links" aria-label="Navegación">
         <a href="#ropa">Tienda</a>
         <a href="#historias">Historias</a>
         <a href="#marca">La marca</a>
-        <button type="button" class="only-mobile" data-action="guide">Talles</button>
       </nav>
       <div class="nav__end">
-        <button class="textbtn theme-toggle" type="button" data-action="theme" aria-label="Cambiar tema">
+        <button class="textbtn theme-toggle only-desktop" type="button" data-action="theme" aria-label="Cambiar tema">
           <span data-theme-label>Claro</span>
         </button>
-        <button class="textbtn" type="button" data-action="guide">Talles</button>
+        <button class="textbtn only-desktop" type="button" data-action="guide">Talles</button>
         <button class="bag" type="button" data-action="open-cart">
           Bolsa
           <span data-cart-count>0</span>
         </button>
-        <button class="burger" type="button" data-action="menu" aria-expanded="false" aria-controls="links">
-          <span></span><span></span>
-          <span class="vh">Menú</span>
-        </button>
       </div>
     </div>
   </header>
+
+  <aside id="mobile-menu" class="mnav" aria-hidden="true">
+    <div class="mnav__backdrop" data-action="menu-close" tabindex="-1"></div>
+    <div class="mnav__drawer" role="dialog" aria-modal="true" aria-label="Menú">
+      <div class="mnav__stage">
+        <div class="mnav__panel mnav__panel--main" data-mnav-panel="main">
+          <ul class="mnav__list">
+            <li>
+              <button type="button" class="mnav__item" data-action="mnav-open" data-panel="tienda">
+                Tienda
+                <svg aria-hidden="true" fill="none" width="12" height="12" viewBox="0 0 10 10">
+                  <path d="m3 9 4-4-4-4" stroke="currentColor" stroke-linecap="square"/>
+                </svg>
+              </button>
+            </li>
+            <li><a class="mnav__item" href="#historias" data-action="menu-close">Historias</a></li>
+            <li><a class="mnav__item" href="#marca" data-action="menu-close">La marca</a></li>
+            <li><button type="button" class="mnav__item" data-action="guide" data-menu-close>Talles</button></li>
+          </ul>
+          <div class="mnav__foot">
+            <button type="button" class="mnav__foot-btn" data-action="theme" aria-label="Cambiar tema">
+              <span data-theme-label>Claro</span>
+            </button>
+          </div>
+        </div>
+        <div class="mnav__panel mnav__panel--sub" data-mnav-panel="tienda">
+          <button type="button" class="mnav__back" data-action="mnav-back">
+            <svg aria-hidden="true" fill="none" width="12" height="12" viewBox="0 0 10 10">
+              <path d="M7 1 3 5l4 4" stroke="currentColor" stroke-linecap="square"/>
+            </svg>
+            Tienda
+          </button>
+          <ul class="mnav__list">
+            <li><a class="mnav__item" href="#ropa" data-action="menu-filter" data-cat="todo">Todo</a></li>
+            <li><a class="mnav__item" href="#ropa" data-action="menu-filter" data-cat="sweaters">Sweaters</a></li>
+            <li><a class="mnav__item" href="#ropa" data-action="menu-filter" data-cat="camisas">Camisas</a></li>
+            <li><a class="mnav__item" href="#ropa" data-action="menu-filter" data-cat="remeras">Remeras</a></li>
+            <li><a class="mnav__item" href="#ropa" data-action="menu-filter" data-cat="abrigos">Abrigos</a></li>
+            <li><a class="mnav__item" href="#ropa" data-action="menu-filter" data-cat="accesorios">Accesorios</a></li>
+          </ul>
+        </div>
+      </div>
+      <button type="button" class="mnav__close" data-action="menu-close" aria-label="Cerrar menú">
+        <svg aria-hidden="true" fill="none" width="14" height="14" viewBox="0 0 16 16">
+          <path d="m1 1 14 14M1 15 15 1" stroke="currentColor" stroke-width="1.3"/>
+        </svg>
+      </button>
+    </div>
+  </aside>
 
   <section class="lab-hero" id="inicio" aria-label="Inicio">
     <div class="lab-hero__brand">
