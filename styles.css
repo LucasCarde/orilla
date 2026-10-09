@@ -8,7 +8,7 @@ html[data-theme="dark"] {
   --surface: #242522;
   --nav-bg: rgba(23, 24, 22, 0.9);
   --serif: "Times New Roman", Times, "Liberation Serif", Georgia, serif;
-  --sans: "Source Sans Pro", "Source Sans 3", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sans: "Source Sans 3", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --nav: 68px;
   --ease: cubic-bezier(.22, 1, .36, 1);
 }
