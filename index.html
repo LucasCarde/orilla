@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>benteveo — del agua a la ciudad</title>
   <meta name="description" content="Ropa de hombre y oro para usar todos los días. Sweaters, camisas, remeras, anillos y una cadena.">
+  <meta name="theme-color" content="#171816" id="theme-color">
+  <meta name="color-scheme" content="dark light">
   <link rel="icon" href="assets/logo-benteveo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,11 +16,14 @@
   <script>
     (() => {
       const key = "benteveo-theme";
+      const colors = { dark: "#171816", light: "#f3f1ec" };
       const saved = localStorage.getItem(key);
       const theme = saved === "light" || saved === "dark"
         ? saved
         : "dark";
       document.documentElement.setAttribute("data-theme", theme);
+      const meta = document.getElementById("theme-color");
+      if (meta) meta.setAttribute("content", colors[theme]);
     })();
   </script>
   <link rel="stylesheet" href="styles.css">

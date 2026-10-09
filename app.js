@@ -15,10 +15,18 @@ function syncThemeLabel() {
   });
 }
 
+const THEME_COLORS = { dark: "#171816", light: "#f3f1ec" };
+
+function syncThemeColor(theme) {
+  const meta = document.getElementById("theme-color");
+  if (meta) meta.setAttribute("content", THEME_COLORS[theme] || THEME_COLORS.dark);
+}
+
 function setTheme(theme) {
   const next = theme === "light" ? "light" : "dark";
   document.documentElement.setAttribute("data-theme", next);
   localStorage.setItem(THEME_KEY, next);
+  syncThemeColor(next);
   syncThemeLabel();
 }
 
