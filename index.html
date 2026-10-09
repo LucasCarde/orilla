@@ -62,9 +62,12 @@
           <span data-theme-label>Claro</span>
         </button>
         <button class="textbtn only-desktop" type="button" data-action="guide">Talles</button>
-        <button class="bag" type="button" data-action="open-cart">
-          Bolsa
-          <span data-cart-count>0</span>
+        <button class="bag bag--empty" type="button" data-action="open-cart" aria-label="Bolsa vacía">
+          <svg class="bag__icon" aria-hidden="true" fill="none" width="22" height="22" viewBox="0 0 24 24">
+            <path d="M6.5 8.5h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.3H8.9a1.5 1.5 0 0 1-1.5-1.3L6.5 8.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+            <path d="M9 8.5V7a3 3 0 0 1 6 0v1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          <span class="bag__badge" data-cart-count hidden>0</span>
         </button>
       </div>
     </div>

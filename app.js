@@ -73,6 +73,16 @@ function renderCart() {
   const count = cart.reduce((sum, item) => sum + item.qty, 0);
   document.querySelectorAll("[data-cart-count]").forEach((el) => {
     el.textContent = String(count);
+    el.hidden = count === 0;
+  });
+  document.querySelectorAll(".bag").forEach((btn) => {
+    const empty = count === 0;
+    btn.classList.toggle("bag--empty", empty);
+    btn.classList.toggle("bag--has-items", !empty);
+    btn.setAttribute(
+      "aria-label",
+      empty ? "Bolsa vacía" : `Bolsa, ${count} ${count === 1 ? "producto" : "productos"}`
+    );
   });
   const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
   document.querySelector("[data-cart-total]").textContent = money(total);

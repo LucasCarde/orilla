@@ -183,11 +183,48 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.03e
 }
 .links a:hover::after { transform: scaleX(1); }
 .only-desktop { display: inline; }
-.bag, .textbtn {
+.textbtn {
   border: 0; background: transparent; padding: 0; cursor: pointer;
   font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
 }
-.bag span { margin-left: 6px; }
+.bag {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  color: var(--ink);
+}
+.bag__icon {
+  display: block;
+  transition: opacity .25s var(--ease);
+}
+.bag--empty .bag__icon { opacity: 0.72; }
+.bag--has-items .bag__icon { opacity: 1; }
+.bag__badge {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 16px;
+  text-align: center;
+  text-transform: none;
+}
+.bag__badge[hidden] { display: none; }
 .burger {
   display: none;
   width: 40px; height: 40px;
