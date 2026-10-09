@@ -293,25 +293,6 @@ html[data-theme="dark"] .lab-hero__band {
   object-position: center 18%;
   filter: grayscale(1) contrast(1.06);
 }
-.lab-hero__go {
-  position: absolute;
-  left: -6%;
-  top: 46%;
-  z-index: 4;
-  width: 44px;
-  height: 44px;
-  display: grid;
-  place-items: center;
-  background: #111;
-  color: var(--accent);
-  text-decoration: none;
-  font-size: 1.25rem;
-  line-height: 1;
-  transform: translate(-10%, -50%);
-  transition: transform .35s var(--ease), background .25s var(--ease);
-}
-.lab-hero__go:hover { transform: translate(2%, -50%); }
-html[data-theme="light"] .lab-hero__go { background: #141816; }
 .lab-hero__spine {
   position: absolute;
   right: 0;
@@ -816,7 +797,6 @@ html[data-theme="light"] .shade { background: rgba(20, 24, 22, 0.28); }
     height: min(54vh, 460px);
   }
   .lab-hero__band { left: 0; right: 0; }
-  .lab-hero__go { left: 0; transform: translate(0, -50%); }
   .lab-hero__spine { display: none; }
   .manifesto { padding: 28px 20px 36px; gap: 0; }
   .manifesto h2 { font-size: clamp(1.85rem, 7.5vw, 2.4rem); margin-bottom: 12px; }
@@ -881,7 +861,7 @@ html[data-theme="light"] .shade { background: rgba(20, 24, 22, 0.28); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .ph img, .lab-hero__go, .top, .cart, .btn { transition: none; }
+  .ph img, .top, .cart, .btn { transition: none; }
 }
 
 @media (max-width: 800px) {
