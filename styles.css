@@ -714,29 +714,32 @@ section[id] { scroll-margin-top: 76px; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   margin: 0;
   padding: 0;
-  border: 1px solid var(--ink);
+  border: 1px solid color-mix(in srgb, var(--ink) 28%, transparent);
   border-radius: 50%;
   border-bottom-style: solid;
   background: transparent;
-  color: var(--ink);
+  color: var(--muted);
   letter-spacing: 0;
   text-transform: none;
-  transition: background .25s var(--ease), color .25s var(--ease), opacity .25s var(--ease);
+  transition: background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease);
 }
 .pcard .add svg {
-  width: 16px;
-  height: 16px;
+  width: 13px;
+  height: 13px;
   display: block;
 }
-.pcard .add:hover { opacity: 0.7; }
+.pcard .add:hover {
+  color: var(--ink);
+  border-color: color-mix(in srgb, var(--ink) 55%, transparent);
+}
 .pcard .add.is-done {
-  background: var(--ink);
-  color: var(--paper);
-  opacity: 1;
+  background: color-mix(in srgb, var(--ink) 12%, transparent);
+  color: var(--ink);
+  border-color: color-mix(in srgb, var(--ink) 40%, transparent);
 }
 .empty { color: var(--muted); }
 
@@ -1068,8 +1071,8 @@ html[data-theme="light"] .shade { background: rgba(20, 24, 22, 0.28); }
   }
   .pinfo h3 { font-size: 14px; line-height: 1.2; }
   .price { font-size: 13px; }
-  .pcard .add { width: 36px; height: 36px; }
-  .pcard .add svg { width: 15px; height: 15px; }
+  .pcard .add { width: 30px; height: 30px; }
+  .pcard .add svg { width: 12px; height: 12px; }
   .sizes { gap: 10px; margin-top: 12px; }
   .sizes button { font-size: 11px; }
   .add { margin-top: 10px; font-size: 10px; }
