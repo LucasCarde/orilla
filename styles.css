@@ -572,8 +572,9 @@ html[data-theme="dark"] .lab-hero__band {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 72px 48px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 56px 28px;
+  max-width: 1180px;
 }
 .pcard[hidden] { display: none; }
 .pcard {
@@ -587,6 +588,7 @@ html[data-theme="dark"] .lab-hero__band {
   width: 100%;
   padding: 0;
   border: 0;
+  border-radius: 16px;
   background: var(--surface);
   cursor: pointer;
   overflow: hidden;
@@ -631,7 +633,7 @@ html[data-theme="dark"] .lab-hero__band {
 }
 .pinfo h3 {
   margin: 0;
-  font-size: clamp(1.55rem, 2.4vw, 2rem);
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
   grid-column: 1;
   grid-row: 2;
 }
@@ -917,7 +919,11 @@ html[data-theme="light"] .shade { background: rgba(20, 24, 22, 0.28); }
   .manifesto, .shop__head, .stories .shop__head, .band, .letter, .footer, .story-grid, .modal__product {
     grid-template-columns: 1fr;
   }
-  .grid { gap: 48px 28px; }
+  .grid {
+    gap: 40px 18px;
+    max-width: none;
+  }
+  .ph { border-radius: 14px; }
   .band__media { min-height: min(48vh, 420px); }
   .band { min-height: 0; }
   .band__copy { min-height: auto; padding: 56px 28px; }
@@ -1016,8 +1022,10 @@ html[data-theme="light"] .shade { background: rgba(20, 24, 22, 0.28); }
   .filters .chip { flex: 0 0 auto; }
   .grid {
     grid-template-columns: 1fr 1fr;
-    gap: 36px 14px;
+    gap: 32px 12px;
+    max-width: none;
   }
+  .ph { border-radius: 12px; }
   .pinfo {
     column-gap: 10px;
     padding-top: 12px;
