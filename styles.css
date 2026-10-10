@@ -573,15 +573,14 @@ html[data-theme="dark"] .lab-hero__band {
 .grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 52px 32px;
-  max-width: 1080px;
+  gap: 56px 28px;
+  max-width: 1180px;
 }
 .pcard[hidden] { display: none; }
 .pcard {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  padding-top: 18px;
 }
 .ph {
   position: relative;
@@ -589,31 +588,12 @@ html[data-theme="dark"] .lab-hero__band {
   width: 100%;
   padding: 0;
   border: 0;
-  border-radius: 0;
-  background: #fff;
+  border-radius: 10px;
+  background: var(--surface);
   cursor: pointer;
-  overflow: visible;
-  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  aspect-ratio: 3/4;
   isolation: isolate;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
-  transition: transform .4s var(--ease), box-shadow .4s var(--ease);
-}
-.ph::before {
-  content: "";
-  position: absolute;
-  top: -18px;
-  left: 50%;
-  z-index: 3;
-  width: 34px;
-  height: 40px;
-  transform: translateX(-50%);
-  background: url("assets/pin.png") center / contain no-repeat;
-  pointer-events: none;
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
-}
-.pcard:hover .ph {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
 }
 .manifesto__photo,
 .band__media,
@@ -624,26 +604,24 @@ html[data-theme="dark"] .lab-hero__band {
 .ph img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: center;
-  padding: 14% 12%;
-  transition: transform 1.1s var(--ease), filter .7s var(--ease);
+  object-fit: cover;
+  transition: transform 1.25s var(--ease), filter .7s var(--ease);
 }
 .pcard:hover .ph img {
-  transform: scale(1.03);
-  filter: saturate(1.03);
+  transform: scale(1.035);
+  filter: saturate(1.04);
 }
 .badge {
   position: absolute;
-  left: 14px;
-  bottom: 14px;
+  left: 16px;
+  bottom: 16px;
   z-index: 1;
-  color: #141816;
+  color: var(--ink);
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  mix-blend-mode: normal;
+  mix-blend-mode: difference;
 }
 .pinfo {
   display: grid;
@@ -942,10 +920,10 @@ html[data-theme="light"] .shade { background: rgba(20, 24, 22, 0.28); }
     grid-template-columns: 1fr;
   }
   .grid {
-    gap: 40px 20px;
+    gap: 40px 18px;
     max-width: none;
   }
-  .ph { border-radius: 0; }
+  .ph { border-radius: 10px; }
   .band__media { min-height: min(48vh, 420px); }
   .band { min-height: 0; }
   .band__copy { min-height: auto; padding: 56px 28px; }
@@ -1044,19 +1022,10 @@ html[data-theme="light"] .shade { background: rgba(20, 24, 22, 0.28); }
   .filters .chip { flex: 0 0 auto; }
   .grid {
     grid-template-columns: 1fr 1fr;
-    gap: 36px 16px;
+    gap: 32px 12px;
     max-width: none;
   }
-  .pcard { padding-top: 14px; }
-  .ph {
-    border-radius: 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
-  }
-  .ph::before {
-    top: -14px;
-    width: 28px;
-    height: 34px;
-  }
+  .ph { border-radius: 8px; }
   .pinfo {
     column-gap: 10px;
     padding-top: 12px;
@@ -1090,15 +1059,14 @@ html[data-theme="light"] .shade { background: rgba(20, 24, 22, 0.28); }
 }
 
 @media (max-width: 560px) {
-  .grid { gap: 28px 12px; }
+  .grid { gap: 28px 10px; }
   .pinfo h3 { font-size: 1.05rem; }
-  .ph { aspect-ratio: 2 / 3; }
-  .ph img { padding: 12% 10%; }
+  .ph { aspect-ratio: 3 / 4; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .ph, .ph img, .top, .cart, .btn { transition: none; }
+  .ph img, .top, .cart, .btn { transition: none; }
 }
 
 @media (max-width: 800px) {
