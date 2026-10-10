@@ -1,20 +1,24 @@
-const KEY = "ben-t-beo-bolsa";
-const MAIL_KEY = "ben-t-beo-mail";
-const THEME_KEY = "ben-t-beo-theme";
+const KEY = "ben-t-veo-bolsa";
+const MAIL_KEY = "ben-t-veo-mail";
+const THEME_KEY = "ben-t-veo-theme";
 const LEGACY_KEYS = {
-  [KEY]: "benteveo-bolsa",
-  [MAIL_KEY]: "benteveo-mail",
-  [THEME_KEY]: "benteveo-theme",
+  [KEY]: ["ben-t-beo-bolsa", "benteveo-bolsa"],
+  [MAIL_KEY]: ["ben-t-beo-mail", "benteveo-mail"],
+  [THEME_KEY]: ["ben-t-beo-theme", "benteveo-theme"],
 };
 
 function readStorage(key) {
   const value = localStorage.getItem(key);
   if (value != null) return value;
-  const legacy = LEGACY_KEYS[key];
-  if (!legacy) return null;
-  const old = localStorage.getItem(legacy);
-  if (old != null) localStorage.setItem(key, old);
-  return old;
+  const legacy = LEGACY_KEYS[key] || [];
+  for (const oldKey of legacy) {
+    const old = localStorage.getItem(oldKey);
+    if (old != null) {
+      localStorage.setItem(key, old);
+      return old;
+    }
+  }
+  return null;
 }
 
 function currentTheme() {
