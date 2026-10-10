@@ -1,6 +1,21 @@
-const KEY = "benteveo-bolsa";
-const MAIL_KEY = "benteveo-mail";
-const THEME_KEY = "benteveo-theme";
+const KEY = "ben-t-beo-bolsa";
+const MAIL_KEY = "ben-t-beo-mail";
+const THEME_KEY = "ben-t-beo-theme";
+const LEGACY_KEYS = {
+  [KEY]: "benteveo-bolsa",
+  [MAIL_KEY]: "benteveo-mail",
+  [THEME_KEY]: "benteveo-theme",
+};
+
+function readStorage(key) {
+  const value = localStorage.getItem(key);
+  if (value != null) return value;
+  const legacy = LEGACY_KEYS[key];
+  if (!legacy) return null;
+  const old = localStorage.getItem(legacy);
+  if (old != null) localStorage.setItem(key, old);
+  return old;
+}
 
 function currentTheme() {
   return document.documentElement.getAttribute("data-theme") === "light"
@@ -44,6 +59,11 @@ function setTheme(theme) {
   syncThemeLabel();
 }
 
+const savedTheme = readStorage(THEME_KEY);
+if (savedTheme === "light" || savedTheme === "dark") {
+  document.documentElement.setAttribute("data-theme", savedTheme);
+}
+
 syncThemeColor(currentTheme());
 syncThemeLabel();
 
@@ -53,7 +73,7 @@ window.money = money;
 
 let cart = [];
 try {
-  cart = JSON.parse(localStorage.getItem(KEY)) || [];
+  cart = JSON.parse(readStorage(KEY)) || [];
 } catch {
   cart = [];
 }
@@ -458,7 +478,7 @@ if (form) {
     if (thanks) thanks.hidden = false;
   });
 
-  if (localStorage.getItem(MAIL_KEY)) {
+  if (readStorage(MAIL_KEY)) {
     form.hidden = true;
     const thanks = document.getElementById("thanks");
     if (thanks) thanks.hidden = false;

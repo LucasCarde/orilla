@@ -13,7 +13,7 @@
   }
 
   root.hidden = false;
-  document.title = product.name + " — benteveo";
+  document.title = product.name + " — Ben T Beo";
 
   const buy = root.querySelector("[data-pdp-buy]");
   buy.dataset.id = product.id;
