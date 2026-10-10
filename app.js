@@ -1,6 +1,25 @@
-const KEY = "benteveo-bolsa";
-const MAIL_KEY = "benteveo-mail";
-const THEME_KEY = "benteveo-theme";
+const KEY = "ben-t-veo-bolsa";
+const MAIL_KEY = "ben-t-veo-mail";
+const THEME_KEY = "ben-t-veo-theme";
+const LEGACY_KEYS = {
+  [KEY]: ["ben-t-beo-bolsa", "benteveo-bolsa"],
+  [MAIL_KEY]: ["ben-t-beo-mail", "benteveo-mail"],
+  [THEME_KEY]: ["ben-t-beo-theme", "benteveo-theme"],
+};
+
+function readStorage(key) {
+  const value = localStorage.getItem(key);
+  if (value != null) return value;
+  const legacy = LEGACY_KEYS[key] || [];
+  for (const oldKey of legacy) {
+    const old = localStorage.getItem(oldKey);
+    if (old != null) {
+      localStorage.setItem(key, old);
+      return old;
+    }
+  }
+  return null;
+}
 
 function currentTheme() {
   return document.documentElement.getAttribute("data-theme") === "light"
@@ -44,6 +63,11 @@ function setTheme(theme) {
   syncThemeLabel();
 }
 
+const savedTheme = readStorage(THEME_KEY);
+if (savedTheme === "light" || savedTheme === "dark") {
+  document.documentElement.setAttribute("data-theme", savedTheme);
+}
+
 syncThemeColor(currentTheme());
 syncThemeLabel();
 
@@ -53,7 +77,7 @@ window.money = money;
 
 let cart = [];
 try {
-  cart = JSON.parse(localStorage.getItem(KEY)) || [];
+  cart = JSON.parse(readStorage(KEY)) || [];
 } catch {
   cart = [];
 }
@@ -196,6 +220,11 @@ function addFrom(host) {
   const size = chosenSize(host);
   const hint = host.querySelector(".size-hint");
   if (!size) {
+    // Talles solo en la ficha: desde la grilla, abrir el producto.
+    if (host.classList.contains("pcard") && typeof productHref === "function") {
+      window.location.href = productHref(host.dataset.id);
+      return;
+    }
     if (hint) hint.hidden = false;
     return;
   }
@@ -453,7 +482,7 @@ if (form) {
     if (thanks) thanks.hidden = false;
   });
 
-  if (localStorage.getItem(MAIL_KEY)) {
+  if (readStorage(MAIL_KEY)) {
     form.hidden = true;
     const thanks = document.getElementById("thanks");
     if (thanks) thanks.hidden = false;

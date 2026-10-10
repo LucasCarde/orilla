@@ -13,7 +13,7 @@
   }
 
   root.hidden = false;
-  document.title = product.name + " — benteveo";
+  document.title = product.name + " — ben t veo";
 
   const buy = root.querySelector("[data-pdp-buy]");
   buy.dataset.id = product.id;
@@ -81,15 +81,6 @@
       const badge = item.badge
         ? `<span class="badge">${item.badge}</span>`
         : "";
-      const sizesBlock = item.fixedSize
-        ? ""
-        : `<div class="sizes" role="group" aria-label="Talle de ${item.name}">
-            <button type="button" data-action="size" data-size="S">S</button>
-            <button type="button" data-action="size" data-size="M">M</button>
-            <button type="button" data-action="size" data-size="L">L</button>
-            <button type="button" data-action="size" data-size="XL">XL</button>
-          </div>
-          <p class="size-hint" hidden>Elegí un talle.</p>`;
       return `<article class="pcard" data-cat="${item.cat}" data-id="${item.id}" data-name="${item.name}" data-price="${item.price}"${item.fixedSize ? ` data-fixed-size="${item.fixedSize}"` : ""} data-meta="${item.meta}" data-blurb="${item.blurb}">
         <a class="ph" href="${productHref(item.id)}">
           <img src="${img.src}" alt="${img.alt}"${pos}>
@@ -102,7 +93,6 @@
             <p class="meta">${item.meta}</p>
           </div>
           <button class="add" type="button" data-action="add" aria-label="Agregar a la bolsa">${bagSvg}</button>
-          ${sizesBlock}
         </div>
       </article>`;
     })
