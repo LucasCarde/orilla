@@ -588,7 +588,7 @@ html[data-theme="dark"] .lab-hero__band {
   width: 100%;
   padding: 0;
   border: 0;
-  border-radius: 16px;
+  border-radius: 10px;
   background: var(--surface);
   cursor: pointer;
   overflow: hidden;
@@ -923,7 +923,7 @@ html[data-theme="light"] .shade { background: rgba(20, 24, 22, 0.28); }
     gap: 40px 18px;
     max-width: none;
   }
-  .ph { border-radius: 14px; }
+  .ph { border-radius: 10px; }
   .band__media { min-height: min(48vh, 420px); }
   .band { min-height: 0; }
   .band__copy { min-height: auto; padding: 56px 28px; }
@@ -1025,7 +1025,7 @@ html[data-theme="light"] .shade { background: rgba(20, 24, 22, 0.28); }
     gap: 32px 12px;
     max-width: none;
   }
-  .ph { border-radius: 12px; }
+  .ph { border-radius: 8px; }
   .pinfo {
     column-gap: 10px;
     padding-top: 12px;
