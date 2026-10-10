@@ -1064,7 +1064,7 @@ html[data-theme="light"] .shade { background: rgba(20, 24, 22, 0.28); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .ph img, .top, .cart, .btn { transition: none; }
+  .ph, .ph img, .top, .cart, .btn, .pcard { transition: none; }
 }
 
 @media (max-width: 800px) {
