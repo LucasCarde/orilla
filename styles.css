@@ -573,14 +573,15 @@ html[data-theme="dark"] .lab-hero__band {
 .grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 56px 28px;
-  max-width: 1180px;
+  gap: 52px 32px;
+  max-width: 1080px;
 }
 .pcard[hidden] { display: none; }
 .pcard {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  padding-top: 18px;
 }
 .ph {
   position: relative;
@@ -588,12 +589,42 @@ html[data-theme="dark"] .lab-hero__band {
   width: 100%;
   padding: 0;
   border: 0;
-  border-radius: 10px;
-  background: var(--surface);
+  border-radius: 0;
+  background: #fff;
   cursor: pointer;
-  overflow: hidden;
-  aspect-ratio: 3/4;
+  overflow: visible;
+  aspect-ratio: 2 / 3;
   isolation: isolate;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.06),
+    0 10px 28px rgba(0, 0, 0, 0.14),
+    4px 4px 0 0 #fff,
+    5px 5px 0 0 rgba(0, 0, 0, 0.05),
+    8px 8px 0 0 #f4f4f2,
+    9px 9px 0 0 rgba(0, 0, 0, 0.04);
+  transition: transform .45s var(--ease), box-shadow .45s var(--ease);
+}
+.ph::before {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  z-index: 3;
+  width: 30px;
+  height: 42px;
+  transform: translateX(-50%);
+  background: url("assets/paperclip.svg") center / contain no-repeat;
+  pointer-events: none;
+}
+.pcard:hover .ph {
+  transform: translateY(-3px);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.08),
+    0 16px 36px rgba(0, 0, 0, 0.18),
+    4px 4px 0 0 #fff,
+    5px 5px 0 0 rgba(0, 0, 0, 0.05),
+    8px 8px 0 0 #f4f4f2,
+    9px 9px 0 0 rgba(0, 0, 0, 0.04);
 }
 .manifesto__photo,
 .band__media,
@@ -604,24 +635,26 @@ html[data-theme="dark"] .lab-hero__band {
 .ph img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 1.25s var(--ease), filter .7s var(--ease);
+  object-fit: contain;
+  object-position: center;
+  padding: 14% 12%;
+  transition: transform 1.1s var(--ease), filter .7s var(--ease);
 }
 .pcard:hover .ph img {
-  transform: scale(1.035);
-  filter: saturate(1.04);
+  transform: scale(1.03);
+  filter: saturate(1.03);
 }
 .badge {
   position: absolute;
-  left: 16px;
-  bottom: 16px;
+  left: 14px;
+  bottom: 14px;
   z-index: 1;
-  color: var(--ink);
+  color: #141816;
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  mix-blend-mode: difference;
+  mix-blend-mode: normal;
 }
 .pinfo {
   display: grid;
@@ -920,10 +953,10 @@ html[data-theme="light"] .shade { background: rgba(20, 24, 22, 0.28); }
     grid-template-columns: 1fr;
   }
   .grid {
-    gap: 40px 18px;
+    gap: 40px 20px;
     max-width: none;
   }
-  .ph { border-radius: 10px; }
+  .ph { border-radius: 0; }
   .band__media { min-height: min(48vh, 420px); }
   .band { min-height: 0; }
   .band__copy { min-height: auto; padding: 56px 28px; }
@@ -1022,10 +1055,23 @@ html[data-theme="light"] .shade { background: rgba(20, 24, 22, 0.28); }
   .filters .chip { flex: 0 0 auto; }
   .grid {
     grid-template-columns: 1fr 1fr;
-    gap: 32px 12px;
+    gap: 36px 16px;
     max-width: none;
   }
-  .ph { border-radius: 8px; }
+  .pcard { padding-top: 14px; }
+  .ph {
+    border-radius: 0;
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.06),
+      0 8px 20px rgba(0, 0, 0, 0.14),
+      3px 3px 0 0 #fff,
+      4px 4px 0 0 rgba(0, 0, 0, 0.05);
+  }
+  .ph::before {
+    top: -12px;
+    width: 24px;
+    height: 34px;
+  }
   .pinfo {
     column-gap: 10px;
     padding-top: 12px;
@@ -1059,14 +1105,15 @@ html[data-theme="light"] .shade { background: rgba(20, 24, 22, 0.28); }
 }
 
 @media (max-width: 560px) {
-  .grid { gap: 28px 10px; }
+  .grid { gap: 28px 12px; }
   .pinfo h3 { font-size: 1.05rem; }
-  .ph { aspect-ratio: 3 / 4; }
+  .ph { aspect-ratio: 2 / 3; }
+  .ph img { padding: 12% 10%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .ph img, .top, .cart, .btn { transition: none; }
+  .ph, .ph img, .top, .cart, .btn { transition: none; }
 }
 
 @media (max-width: 800px) {
