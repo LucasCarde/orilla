@@ -181,12 +181,22 @@ function addFrom(host) {
   const button = host.querySelector(".add");
   if (button) {
     button.classList.add("is-done");
-    const previous = button.textContent;
-    button.textContent = "Listo";
-    setTimeout(() => {
-      button.classList.remove("is-done");
-      button.textContent = previous;
-    }, 900);
+    const label = button.querySelector(".add__label");
+    if (label) {
+      const previous = label.textContent;
+      label.textContent = "Listo";
+      setTimeout(() => {
+        button.classList.remove("is-done");
+        label.textContent = previous;
+      }, 900);
+    } else {
+      const previousLabel = button.getAttribute("aria-label");
+      button.setAttribute("aria-label", "Listo");
+      setTimeout(() => {
+        button.classList.remove("is-done");
+        if (previousLabel) button.setAttribute("aria-label", previousLabel);
+      }, 900);
+    }
   }
 }
 
