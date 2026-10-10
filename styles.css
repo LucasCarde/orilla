@@ -747,15 +747,6 @@ section[id] { scroll-margin-top: 76px; }
 }
 .empty { color: var(--muted); }
 
-@media (hover: hover) and (min-width: 801px) {
-  .pcard .sizes,
-  .pcard .size-hint { display: none; }
-  .pcard:hover .sizes,
-  .pcard:focus-within .sizes { display: flex; }
-  .pcard:hover .size-hint:not([hidden]),
-  .pcard:focus-within .size-hint:not([hidden]) { display: block; }
-}
-
 .band {
   display: grid;
   grid-template-columns: 1.25fr 0.75fr;

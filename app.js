@@ -196,6 +196,11 @@ function addFrom(host) {
   const size = chosenSize(host);
   const hint = host.querySelector(".size-hint");
   if (!size) {
+    // Talles solo en la ficha: desde la grilla, abrir el producto.
+    if (host.classList.contains("pcard") && typeof productHref === "function") {
+      window.location.href = productHref(host.dataset.id);
+      return;
+    }
     if (hint) hint.hidden = false;
     return;
   }
