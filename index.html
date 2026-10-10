@@ -31,8 +31,8 @@
     TEMPLATE DE MARCA
     Nombre: benteveo. Buscá "benteveo" si lo querés cambiar.
     Textos y precios: en este archivo.
-    Para sumar una prenda: copiá un <article class="pcard"> y poné la foto en assets/.
-    La bolsa se guarda en el navegador. Todavía no cobra.
+    Para sumar una prenda: agregala en products.js y copiá un <article class="pcard> en la grilla.
+    Cada prenda tiene ficha en producto.html?id=…. La bolsa se guarda en el navegador. Todavía no cobra.
   -->
 </head>
 <body>
@@ -187,13 +187,13 @@
 
     <div class="grid" id="grid">
       <article class="pcard" data-cat="accesorios" data-id="anillo-sello" data-name="Anillo sello" data-price="46000" data-fixed-size="Único" data-meta="Oro · sello" data-blurb="Un sello de oro, para usarlo todos los días. La cara grabada es la pieza, no un adorno.">
-        <button class="ph" type="button" data-action="open-product">
+        <a class="ph" href="producto.html?id=anillo-sello">
           <img src="assets/gold-ring.jpg" alt="Anillo sello de oro, de cerca">
           <span class="badge">Oro</span>
-        </button>
+        </a>
         <div class="pinfo">
           <div class="pinfo__text">
-            <h3><button type="button" data-action="open-product">Anillo sello</button></h3>
+            <h3><a href="producto.html?id=anillo-sello">Anillo sello</a></h3>
             <p class="price">$46.000</p>
             <p class="meta">Oro · sello</p>
           </div>
@@ -204,12 +204,12 @@
       </article>
 
       <article class="pcard" data-cat="accesorios" data-id="anillos" data-name="Anillos" data-price="68000" data-fixed-size="Único" data-meta="Oro · tres" data-blurb="Tres anillos para usar juntos. Sellos chicos, de oro, para la mano y no para guardarlos.">
-        <button class="ph" type="button" data-action="open-product">
+        <a class="ph" href="producto.html?id=anillos">
           <img src="assets/gold-finger.jpg" alt="Tres anillos sello de oro en la mano">
-        </button>
+        </a>
         <div class="pinfo">
           <div class="pinfo__text">
-            <h3><button type="button" data-action="open-product">Anillos</button></h3>
+            <h3><a href="producto.html?id=anillos">Anillos</a></h3>
             <p class="price">$68.000</p>
             <p class="meta">Oro · tres</p>
           </div>
@@ -220,12 +220,12 @@
       </article>
 
       <article class="pcard" data-cat="accesorios" data-id="cadena" data-name="Cadena" data-price="54000" data-fixed-size="Único" data-meta="Oro · gruesa" data-blurb="Una cadena gruesa, arriba de la remera. Sin dije. El oro se usa, no se guarda.">
-        <button class="ph" type="button" data-action="open-product">
+        <a class="ph" href="producto.html?id=cadena">
           <img src="assets/gold-man.jpg" alt="Cadena de oro gruesa sobre una remera">
-        </button>
+        </a>
         <div class="pinfo">
           <div class="pinfo__text">
-            <h3><button type="button" data-action="open-product">Cadena</button></h3>
+            <h3><a href="producto.html?id=cadena">Cadena</a></h3>
             <p class="price">$54.000</p>
             <p class="meta">Oro · gruesa</p>
           </div>
@@ -236,13 +236,13 @@
       </article>
 
       <article class="pcard" data-cat="abrigos" data-id="saco-arena" data-name="Saco arena" data-price="138000" data-meta="Lana · arena" data-blurb="Corte recto, sin hombreras duras. Va con una remera blanca a la mañana y también cuando el plan se pone más serio.">
-        <button class="ph" type="button" data-action="open-product">
+        <a class="ph" href="producto.html?id=saco-arena">
           <img src="assets/denim.jpg" alt="Saco arena abierto sobre una remera blanca" style="object-position:center 18%">
           <span class="badge">El puente</span>
-        </button>
+        </a>
         <div class="pinfo">
           <div class="pinfo__text">
-            <h3><button type="button" data-action="open-product">Saco arena</button></h3>
+            <h3><a href="producto.html?id=saco-arena">Saco arena</a></h3>
             <p class="price">$138.000</p>
             <p class="meta">Lana · arena</p>
           </div>
@@ -260,12 +260,12 @@
       </article>
 
       <article class="pcard" data-cat="camisas" data-id="camisa-ladrillo" data-name="Camisa ladrillo" data-price="78000" data-meta="Algodón · ladrillo" data-blurb="Abierta arriba de una remera, o cerrada. El punto medio entre la playa y una mesa.">
-        <button class="ph" type="button" data-action="open-product">
+        <a class="ph" href="producto.html?id=camisa-ladrillo">
           <img src="assets/street.jpg" alt="Camisa ladrillo abierta sobre remera blanca" style="object-position:center 22%">
-        </button>
+        </a>
         <div class="pinfo">
           <div class="pinfo__text">
-            <h3><button type="button" data-action="open-product">Camisa ladrillo</button></h3>
+            <h3><a href="producto.html?id=camisa-ladrillo">Camisa ladrillo</a></h3>
             <p class="price">$78.000</p>
             <p class="meta">Algodón · ladrillo</p>
           </div>
@@ -283,12 +283,12 @@
       </article>
 
       <article class="pcard" data-cat="remeras" data-id="remera-base" data-name="Remera base" data-price="48000" data-meta="Algodón pesado · blanca" data-blurb="Cuello que no se deforma y tela que se siente. La prenda que más se va a usar, sola o abajo de todo lo demás.">
-        <button class="ph" type="button" data-action="open-product">
+        <a class="ph" href="producto.html?id=remera-base">
           <img src="assets/p-shirts.jpg" alt="Remera blanca en una percha">
-        </button>
+        </a>
         <div class="pinfo">
           <div class="pinfo__text">
-            <h3><button type="button" data-action="open-product">Remera base</button></h3>
+            <h3><a href="producto.html?id=remera-base">Remera base</a></h3>
             <p class="price">$48.000</p>
             <p class="meta">Algodón pesado · blanca</p>
           </div>
@@ -306,12 +306,12 @@
       </article>
 
       <article class="pcard" data-cat="sweaters" data-id="sweater-gris" data-name="Sweater gris" data-price="96000" data-meta="Punto · gris" data-blurb="Cuello alto, punto elastizado. Solo, o debajo del saco cuando refresca en la ciudad.">
-        <button class="ph" type="button" data-action="open-product">
+        <a class="ph" href="producto.html?id=sweater-gris">
           <img src="assets/folded.jpg" alt="Sweater de punto gris, doblado" style="object-position:center 55%">
-        </button>
+        </a>
         <div class="pinfo">
           <div class="pinfo__text">
-            <h3><button type="button" data-action="open-product">Sweater gris</button></h3>
+            <h3><a href="producto.html?id=sweater-gris">Sweater gris</a></h3>
             <p class="price">$96.000</p>
             <p class="meta">Punto · gris</p>
           </div>
@@ -329,12 +329,12 @@
       </article>
 
       <article class="pcard" data-cat="camisas" data-id="sobrecamisa-jean" data-name="Sobrecamisa jean" data-price="84000" data-meta="Jean · azul lavado" data-blurb="La de la costa. Arremangada, encima de una remera, y se queda puesta todo el día.">
-        <button class="ph" type="button" data-action="open-product">
+        <a class="ph" href="producto.html?id=sobrecamisa-jean">
           <img src="assets/shirt.jpg" alt="Sobrecamisa de jean en la playa" style="object-position:center 30%">
-        </button>
+        </a>
         <div class="pinfo">
           <div class="pinfo__text">
-            <h3><button type="button" data-action="open-product">Sobrecamisa jean</button></h3>
+            <h3><a href="producto.html?id=sobrecamisa-jean">Sobrecamisa jean</a></h3>
             <p class="price">$84.000</p>
             <p class="meta">Jean · azul lavado</p>
           </div>
@@ -352,12 +352,12 @@
       </article>
 
       <article class="pcard" data-cat="sweaters" data-id="buzo-crudo" data-name="Buzo crudo" data-price="98000" data-meta="Frisa · crudo" data-blurb="Sin estampa y sin capucha ruidosa. Cómodo, y bastante limpio como para salir así nomás.">
-        <button class="ph" type="button" data-action="open-product">
+        <a class="ph" href="producto.html?id=buzo-crudo">
           <img src="assets/p-whites.jpg" alt="Buzo crudo en percha">
-        </button>
+        </a>
         <div class="pinfo">
           <div class="pinfo__text">
-            <h3><button type="button" data-action="open-product">Buzo crudo</button></h3>
+            <h3><a href="producto.html?id=buzo-crudo">Buzo crudo</a></h3>
             <p class="price">$98.000</p>
             <p class="meta">Frisa · crudo</p>
           </div>
@@ -375,12 +375,12 @@
       </article>
 
       <article class="pcard" data-cat="abrigos" data-id="campera-ladrillo" data-name="Campera ladrillo" data-price="112000" data-meta="Nylon · ladrillo" data-blurb="Liviana, para el entretiempo. Cierra el look cuando la remera sola se queda corta, sin disfrazarlo.">
-        <button class="ph" type="button" data-action="open-product">
+        <a class="ph" href="producto.html?id=campera-ladrillo">
           <img src="assets/jacket.jpg" alt="Campera ladrillo en una percha">
-        </button>
+        </a>
         <div class="pinfo">
           <div class="pinfo__text">
-            <h3><button type="button" data-action="open-product">Campera ladrillo</button></h3>
+            <h3><a href="producto.html?id=campera-ladrillo">Campera ladrillo</a></h3>
             <p class="price">$112.000</p>
             <p class="meta">Nylon · ladrillo</p>
           </div>
@@ -398,12 +398,12 @@
       </article>
 
       <article class="pcard" data-cat="sweaters" data-id="buzo-gris" data-name="Buzo gris" data-price="94000" data-meta="Frisa · gris" data-blurb="El de todos los días. Capucha, bolsillo, y una tela que no se ve fina de más.">
-        <button class="ph" type="button" data-action="open-product">
+        <a class="ph" href="producto.html?id=buzo-gris">
           <img src="assets/p-hoodie.jpg" alt="Buzo gris, de espaldas" style="object-position:center 40%">
-        </button>
+        </a>
         <div class="pinfo">
           <div class="pinfo__text">
-            <h3><button type="button" data-action="open-product">Buzo gris</button></h3>
+            <h3><a href="producto.html?id=buzo-gris">Buzo gris</a></h3>
             <p class="price">$94.000</p>
             <p class="meta">Frisa · gris</p>
           </div>
@@ -568,6 +568,7 @@
     <button class="textbtn" type="button" data-action="close-dialog">Cerrar</button>
   </dialog>
 
+  <script src="products.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

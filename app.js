@@ -49,6 +49,7 @@ syncThemeLabel();
 
 const money = (n) =>
   "$" + Math.round(n).toLocaleString("es-AR");
+window.money = money;
 
 let cart = [];
 try {
@@ -94,8 +95,13 @@ function renderCart() {
 
   body.innerHTML = cart
     .map((item) => {
-      const card = document.querySelector(`.pcard[data-id="${item.id}"] img`);
-      const src = card ? card.getAttribute("src") : "";
+      const src =
+        item.image ||
+        (typeof productImage === "function" ? productImage(item.id) : "") ||
+        (() => {
+          const card = document.querySelector(`.pcard[data-id="${item.id}"] img`);
+          return card ? card.getAttribute("src") : "";
+        })();
       return `<div class="line">
         <img src="${src}" alt="">
         <div>
@@ -128,12 +134,46 @@ function closeCart() {
 }
 
 function hostOf(node) {
-  return node.closest(".pcard, .modal__product") || productDialog;
+  return node.closest(".pcard, [data-pdp-buy], .modal__product") || productDialog;
+}
+
+function productFromHost(host) {
+  if (!host) return null;
+  if (host.classList.contains("pcard") || host.hasAttribute("data-pdp-buy")) {
+    return {
+      id: host.dataset.id,
+      name: host.dataset.name,
+      price: Number(host.dataset.price),
+      fixedSize: host.dataset.fixedSize || "",
+      image:
+        (typeof productImage === "function" && productImage(host.dataset.id)) ||
+        (host.querySelector && host.querySelector("img")
+          ? host.querySelector("img").getAttribute("src")
+          : "") ||
+        "",
+    };
+  }
+  if (productDialog && host === productDialog) {
+    const card = document.querySelector(`.pcard[data-id="${productDialog.dataset.id}"]`);
+    return productFromHost(card) || {
+      id: productDialog.dataset.id,
+      name: productDialog.querySelector("[data-p-name]")?.textContent || "",
+      price: Number(
+        String(productDialog.querySelector("[data-p-price]")?.textContent || "")
+          .replace(/[^\d]/g, "")
+      ),
+      fixedSize: productDialog.dataset.fixedSize || "",
+      image: productDialog.querySelector("[data-p-img]")?.src || "",
+    };
+  }
+  return null;
 }
 
 function fixedSize(host) {
+  if (!host) return "";
+  if (host.dataset && host.dataset.fixedSize) return host.dataset.fixedSize;
   if (host.classList.contains("pcard")) return host.dataset.fixedSize || "";
-  return productDialog.dataset.fixedSize || "";
+  return (productDialog && productDialog.dataset.fixedSize) || "";
 }
 
 function chosenSize(host) {
@@ -152,6 +192,7 @@ function markSize(host, size) {
 }
 
 function addFrom(host) {
+  if (!host) return;
   const size = chosenSize(host);
   const hint = host.querySelector(".size-hint");
   if (!size) {
@@ -159,21 +200,20 @@ function addFrom(host) {
     return;
   }
 
-  const source = host.classList.contains("pcard")
-    ? host
-    : document.querySelector(`.pcard[data-id="${productDialog.dataset.id}"]`);
-  const id = source.dataset.id;
-  const key = id + "-" + size;
+  const product = productFromHost(host);
+  if (!product || !product.id) return;
+  const key = product.id + "-" + size;
   const found = cart.find((item) => item.key === key);
   if (found) found.qty += 1;
   else {
     cart.push({
       key,
-      id,
-      name: source.dataset.name,
-      price: Number(source.dataset.price),
+      id: product.id,
+      name: product.name,
+      price: product.price,
       size,
       qty: 1,
+      image: product.image || "",
     });
   }
   save();
@@ -201,6 +241,12 @@ function addFrom(host) {
 }
 
 function openProduct(card) {
+  if (!card) return;
+  if (typeof productHref === "function") {
+    window.location.href = productHref(card.dataset.id);
+    return;
+  }
+  if (!productDialog) return;
   const img = card.querySelector("img");
   productDialog.querySelector("[data-p-img]").src = img.src;
   productDialog.querySelector("[data-p-img]").alt = img.alt;
@@ -224,6 +270,7 @@ function openProduct(card) {
 }
 
 function openStory(article) {
+  if (!storyDialog || !article) return;
   storyDialog.querySelector("[data-s-kicker]").textContent =
     article.querySelector(".eyebrow").textContent;
   storyDialog.querySelector("[data-s-title]").textContent =
@@ -249,7 +296,8 @@ function applyFilter(cat) {
     card.hidden = hide;
     if (!hide) shown += 1;
   });
-  document.getElementById("empty").hidden = shown !== 0;
+  const empty = document.getElementById("empty");
+  if (empty) empty.hidden = shown !== 0;
 }
 
 function lockScroll(lock) {
@@ -364,7 +412,7 @@ document.addEventListener("click", (event) => {
     if (target.hasAttribute("data-menu-close") || target.closest("#mobile-menu")) {
       closeMenu();
     }
-    guideDialog.showModal();
+    if (guideDialog) guideDialog.showModal();
   }
 
   if (action === "theme") {
@@ -395,17 +443,21 @@ document.addEventListener("keydown", (event) => {
 });
 
 const form = document.getElementById("letter-form");
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const email = new FormData(form).get("email");
-  localStorage.setItem(MAIL_KEY, String(email));
-  form.hidden = true;
-  document.getElementById("thanks").hidden = false;
-});
+if (form) {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const email = new FormData(form).get("email");
+    localStorage.setItem(MAIL_KEY, String(email));
+    form.hidden = true;
+    const thanks = document.getElementById("thanks");
+    if (thanks) thanks.hidden = false;
+  });
 
-if (localStorage.getItem(MAIL_KEY)) {
-  form.hidden = true;
-  document.getElementById("thanks").hidden = false;
+  if (localStorage.getItem(MAIL_KEY)) {
+    form.hidden = true;
+    const thanks = document.getElementById("thanks");
+    if (thanks) thanks.hidden = false;
+  }
 }
 
 renderCart();
