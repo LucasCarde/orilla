@@ -246,7 +246,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.03e
   position: fixed;
   inset: 0;
   z-index: 50;
-  background: rgba(10, 11, 10, 0.42);
+  background: rgba(43, 39, 43, 0.48);
   opacity: 0;
   transition: opacity .35s var(--ease);
 }
@@ -890,7 +890,7 @@ section[id] { scroll-margin-top: 76px; }
   position: fixed;
   inset: 0;
   z-index: 60;
-  background: rgba(10, 10, 9, 0.45);
+  background: rgba(43, 39, 43, 0.5);
 }
 .shade[hidden] { display: none; }
 .line {
@@ -925,9 +925,9 @@ section[id] { scroll-margin-top: 76px; }
   background-color: var(--paper);
   color: var(--ink);
 }
-.modal::backdrop { background: rgba(10, 10, 9, 0.5); }
+.modal::backdrop { background: rgba(43, 39, 43, 0.55); }
 html[data-theme="light"] .modal::backdrop,
-html[data-theme="light"] .shade { background: rgba(20, 24, 22, 0.28); }
+html[data-theme="light"] .shade { background: rgba(43, 39, 43, 0.32); }
 .modal h2 { margin: 0 0 14px; font-size: clamp(2.2rem, 4vw, 3.2rem); }
 .modal__product {
   display: grid;
