@@ -34,7 +34,7 @@ function syncThemeLabel() {
   });
 }
 
-const THEME_COLORS = { dark: "#171816", light: "#f3f1ec" };
+const THEME_COLORS = { dark: "#2b272b", light: "#bbcbdc" };
 
 function syncThemeColor(theme) {
   const color = THEME_COLORS[theme] || THEME_COLORS.dark;
