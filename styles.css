@@ -141,7 +141,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.03e
 }
 .logo__mark {
   width: auto;
-  height: 46px;
+  height: 33px;
   display: block;
   flex: 0 0 auto;
 }
@@ -829,7 +829,7 @@ section[id] { scroll-margin-top: 76px; }
   margin: 0 0 10px;
 }
 .logo--foot .logo__mark {
-  height: 58px;
+  height: 41px;
 }
 .footer p { margin: 0 0 8px; color: var(--muted); max-width: 32ch; }
 .footer a, .footer button {
@@ -1163,8 +1163,8 @@ html[data-theme="light"] .shade { background: rgba(20, 24, 22, 0.28); }
     grid-column: 2;
     justify-self: center;
   }
-  .logo__mark { height: 38px; }
-  .logo--foot .logo__mark { height: 48px; }
+  .logo__mark { height: 27px; }
+  .logo--foot .logo__mark { height: 34px; }
   .links { display: none; }
   .nav__end {
     grid-column: 3;
